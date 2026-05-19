@@ -1,0 +1,64 @@
+Você é um desenvolvedor front-end sênior trabalhando no site da Vitrine Auto Leste.
+
+Contexto do projeto:
+A Vitrine Auto Leste é uma vitrine de venda direta de veículos selecionados, com foco em captação de leads pelo WhatsApp, anúncios orgânicos, SEO local e apresentação premium dos carros. Não é para parecer marketplace genérico de vários anunciantes nesta primeira versão; deve soar como uma operação comercial com atendimento direto.
+
+Arquivos que estou te entregando:
+- index.html: protótipo funcional em HTML/CSS/JS puro.
+- data/vehicles.json: mapa dos veículos com dados completos.
+- data/vehicles.csv: planilha/CSV dos veículos para importação e conferência.
+- assets/cars/: imagens organizadas por pasta/slug de veículo.
+
+Número oficial do WhatsApp para todos os botões e formulários:
+21 97911-2975
+Formato para links: 5521979112975.
+
+Requisitos obrigatórios:
+1. Fazer o site funcionar perfeitamente, sem erro de JavaScript, sem dependência de build, sem npm obrigatório na primeira versão.
+2. Manter a identidade visual da Vitrine Auto Leste: azul-marinho escuro, dourado, branco premium, visual automotivo premium, limpo, comercial e confiável.
+3. Os filtros devem funcionar perfeitamente:
+   - Busca textual por marca, modelo, versão, motor, cor, câmbio, combustível e descrição.
+   - Marca.
+   - Categoria.
+   - Câmbio.
+   - Combustível.
+   - Cor.
+   - Preço mínimo.
+   - Preço máximo.
+   - KM máximo.
+   - Ano mínimo.
+   - Ordenação por destaques, menor preço, maior preço, mais novos e menor KM.
+4. Se um veículo estiver com KM não informado, ele deve aparecer normalmente quando o filtro de KM estiver vazio. Quando o usuário filtrar KM máximo, veículos sem KM devem sair do resultado para não gerar dado falso.
+5. Todos os botões de WhatsApp devem abrir conversa com mensagem pré-preenchida sobre o veículo correto.
+6. O formulário do rodapé/seção de financiamento deve enviar os dados direto para o WhatsApp, montando a mensagem automaticamente com nome, telefone, veículo de interesse, tipo de compra, entrada, horário e observações.
+7. Cada veículo deve ter galeria com imagens da pasta correspondente. Não misturar fotos de veículos diferentes.
+8. O site deve ser responsivo para desktop e mobile.
+9. Otimizar SEO básico:
+   - title e meta description.
+   - headings bem organizados.
+   - alt nas imagens.
+   - textos com palavras-chave naturais: veículos selecionados, carros usados, Zona Leste, financiamento, WhatsApp, hatch, SUV, sedan, utilitário etc.
+10. Manter os preços abaixo:
+   - Nivus: R$ 113.900
+   - Onix: R$ 48.900
+   - Fiesta Branco 1.5: R$ 48.900
+   - Sonata: R$ 67.900
+   - Fiesta Preto 1.0: R$ 19.900
+   - Mini Cooper: R$ 101.900
+   - Fiorino: R$ 74.900
+   - Gol: R$ 48.900
+11. Não exibir placas como informação principal no front-end. Elas podem ficar no JSON para controle interno, mas o usuário final deve ver foco em modelo, preço, KM, motor, câmbio, cor e localização.
+12. O site deve abrir localmente ao clicar no index.html. Se você modularizar, garanta que o ambiente local esteja bem explicado.
+13. Se converter para React/Vite/Next no futuro, preservar todos os dados, filtros, lógica de WhatsApp e estrutura de imagens.
+
+Melhorias desejadas:
+- Criar página individual dinâmica por veículo ou rota/hash modal bem feita.
+- Melhorar acessibilidade do modal e dos filtros.
+- Criar cards de destaque para financiamento, procedência, fotos reais e atendimento direto.
+- Criar seção de SEO local: carros usados na Zona Leste, São Miguel Paulista, Itaim Paulista e região.
+- Adicionar schema.org Vehicle/AutoDealer se fizer sentido.
+- Criar fallback de imagem quando um veículo não tiver foto.
+- Garantir performance carregando imagens com lazy loading.
+
+Tarefa:
+Revise os arquivos, corrija qualquer bug, organize o código e entregue uma versão final funcional, limpa e pronta para subir em hospedagem estática ou evoluir para aplicação completa. O resultado precisa respeitar exatamente a estratégia comercial da Vitrine Auto Leste e funcionar com os veículos cadastrados no JSON/CSV.
