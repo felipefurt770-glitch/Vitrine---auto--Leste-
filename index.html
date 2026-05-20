@@ -5,904 +5,773 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Vitrine Auto Leste | Carros Usados Selecionados na Zona Leste de SP</title>
   <meta name="description" content="Vitrine Auto Leste — veículos usados selecionados na Zona Leste de São Paulo. Fotos reais, financiamento facilitado, procedência e atendimento direto pelo WhatsApp. Atendemos São Miguel Paulista, Itaim Paulista e região."/>
-  <meta name="keywords" content="carros usados zona leste, veículos usados são paulo, carros usados São Miguel Paulista, Itaim Paulista, financiamento veículos zona leste, comprar carro SP, hatch usados zona leste, SUV usados SP, sedan usados zona leste, utilitário"/>
+  <meta name="keywords" content="carros usados zona leste, veículos usados são paulo, carros usados São Miguel Paulista, Itaim Paulista, financiamento veículos zona leste, comprar carro SP, hatch usados zona leste, SUV usados SP, sedan usados zona leste"/>
   <meta name="robots" content="index,follow"/>
   <meta name="theme-color" content="#071A33"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Vitrine Auto Leste | Carros Usados Selecionados na Zona Leste"/>
   <meta property="og:description" content="Veículos usados selecionados com fotos reais, procedência, financiamento facilitado e atendimento direto pelo WhatsApp na Zona Leste de São Paulo."/>
   <meta property="og:locale" content="pt_BR"/>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Vitrine Auto Leste","description":"Vitrine de venda direta de veículos usados selecionados na Zona Leste de São Paulo. Atendimento direto pelo WhatsApp.","telephone":"+5521979112975","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"areaServed":"São Paulo — Zona Leste","contactPoint":{"@type":"ContactPoint","telephone":"+5521979112975","contactType":"sales","availableLanguage":"Portuguese"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Vitrine Auto Leste","description":"Vitrine de venda direta de veículos usados selecionados na Zona Leste de São Paulo.","telephone":"+5521979112975","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"areaServed":"São Paulo — Zona Leste","contactPoint":{"@type":"ContactPoint","telephone":"+5521979112975","contactType":"sales","availableLanguage":"Portuguese"}}</script>
   <style>
-    :root{--navy:#071A33;--deep:#020B18;--graphite:#1C2430;--gold:#C99A3D;--gold2:#E0B866;--white:#F7F7F2;--muted:#B8C0CC;--line:rgba(255,255,255,.12);--shadow:0 24px 70px rgba(0,0,0,.35)}
+    :root {
+      --navy:#071A33; --navy2:#0d2847; --gold:#C99A3D; --gold2:#E0B866;
+      --bg:#f2f4f7; --surface:#fff; --text:#1a2433; --text2:#4b5563; --text3:#9ca3af;
+      --border:#e2e8f0; --green:#25D366;
+      --sh:0 2px 12px rgba(0,0,0,.08); --sh-lg:0 8px 32px rgba(0,0,0,.14);
+      --r:10px;
+    }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 20% 0%,rgba(201,154,61,.12),transparent 28%),linear-gradient(180deg,var(--navy),var(--deep) 55%,#050505);color:var(--white);min-height:100vh}
+    body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .container{width:min(1180px,calc(100% - 32px));margin:auto}
+    .container{width:min(1200px,calc(100% - 32px));margin:auto}
 
-    /* Header */
-    .topbar{position:sticky;top:0;z-index:100;background:rgba(2,11,24,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.02em}
-    .mark{width:52px;height:40px;border:1px solid rgba(201,154,61,.75);border-radius:14px;background:linear-gradient(135deg,#071A33,#020B18);position:relative;box-shadow:0 0 20px rgba(201,154,61,.15);flex-shrink:0}
-    .mark:before{content:"";position:absolute;left:9px;right:9px;top:12px;height:11px;border-top:2.5px solid #fff;border-radius:40px 40px 0 0}
-    .mark:after{content:"";position:absolute;left:11px;right:10px;bottom:9px;height:2px;background:var(--gold);transform:skew(-20deg)}
-    .logo-text small{display:block;color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.02em;margin-top:2px}
-    .logo-text .gold-word{color:var(--gold)}
-    .menu{display:flex;gap:24px;align-items:center;color:rgba(247,247,242,.75);font-size:14px;font-weight:700}
-    .menu a:hover{color:var(--white)}
-    .hamburger{display:none;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--white);border-radius:10px;padding:8px 11px;cursor:pointer;font-size:18px;line-height:1}
-    .mobile-nav{display:none;position:fixed;inset:0;background:rgba(2,11,24,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px;font-size:22px;font-weight:800}
+    /* ─── HEADER ─────────────────────────────── */
+    .header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+    .site-logo{height:52px;width:auto;object-fit:contain}
+    .header-nav{display:flex;gap:4px;align-items:center}
+    .header-nav a{color:rgba(255,255,255,.8);font-size:14px;font-weight:600;padding:8px 14px;border-radius:8px;transition:.15s}
+    .header-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+    .header-actions{display:flex;gap:10px;align-items:center}
+    .hamburger{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:8px 11px;cursor:pointer;font-size:18px;line-height:1}
+    .mobile-nav{display:none;position:fixed;inset:0;background:rgba(7,26,51,.98);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:24px;font-size:20px;font-weight:700}
     .mobile-nav.open{display:flex}
-    .mobile-nav-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.08);border:1px solid var(--line);color:white;border-radius:12px;padding:10px 14px;cursor:pointer;font-size:16px}
-    .mobile-nav a:hover{color:var(--gold2)}
+    .mobile-nav a{color:rgba(255,255,255,.85);padding:10px 20px}
+    .mobile-nav a:hover{color:#fff}
+    .mobile-nav-close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;font-size:16px}
 
-    /* Buttons */
-    .btn{border:0;border-radius:999px;padding:11px 18px;font-size:14px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.2s;line-height:1;text-align:center}
-    .btn.gold{background:var(--gold);color:#061A33;box-shadow:0 12px 32px rgba(201,154,61,.22)}
-    .btn.gold:hover,.btn.gold:focus-visible{background:var(--gold2);transform:translateY(-1px);outline:2px solid var(--gold2);outline-offset:2px}
-    .btn.ghost{background:rgba(255,255,255,.05);color:var(--white);border:1px solid var(--line)}
-    .btn.ghost:hover,.btn.ghost:focus-visible{background:rgba(255,255,255,.1);outline:2px solid var(--line);outline-offset:2px}
+    /* ─── BUTTONS ─────────────────────────────── */
+    .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:10px 18px;font:700 13px/1 inherit;cursor:pointer;transition:.15s;white-space:nowrap}
+    .btn-primary{background:var(--gold);color:#071A33;box-shadow:0 4px 16px rgba(201,154,61,.3)}
+    .btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
+    .btn-navy{background:var(--navy);color:#fff}
+    .btn-navy:hover{background:var(--navy2)}
+    .btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--border)}
+    .btn-outline:hover{border-color:var(--navy);background:#f8fafc}
+    .btn-wa{background:var(--green);color:#fff}
+    .btn-wa:hover{background:#1ebe5c;transform:translateY(-1px)}
+    .btn-lg{padding:13px 24px;font-size:15px}
 
-    /* Hero */
-    .hero{padding:64px 0 32px;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
-    .eyebrow{display:inline-flex;border:1px solid rgba(201,154,61,.35);background:rgba(201,154,61,.08);color:var(--gold2);border-radius:999px;padding:8px 14px;font-weight:900;font-size:12px;margin-bottom:20px;letter-spacing:.03em}
-    h1{font-size:clamp(40px,6.5vw,74px);line-height:.98;letter-spacing:-.05em}
-    h2{font-size:clamp(28px,4vw,46px);line-height:1.02;letter-spacing:-.04em}
-    h3{font-size:18px;line-height:1.3;letter-spacing:-.02em}
-    p{color:rgba(247,247,242,.68);line-height:1.65;margin-top:8px}
-    .hero p{font-size:17px;max-width:620px;margin-top:16px}
-    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-    .hero-card{border:1px solid rgba(201,154,61,.22);border-radius:32px;background:rgba(255,255,255,.045);box-shadow:var(--shadow);padding:13px}
-    .hero-card-inner{border-radius:24px;background:linear-gradient(160deg,rgba(7,26,51,.95),rgba(2,11,24,.95));border:1px solid var(--line);padding:16px}
-    .hero-cover{height:340px;border-radius:20px;object-fit:contain;width:100%;border:1px solid var(--line);background:#061828}
-    .hero-meta{margin-top:12px;font-size:14px;color:var(--muted)}
-    .hero-meta b{color:var(--gold2)}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
-    .stat{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:18px;padding:13px;text-align:center}
-    .stat strong{display:block;color:var(--gold2);font-size:20px;font-weight:900}
-    .stat span{font-size:12px;color:var(--muted)}
+    /* ─── HERO BANNER ─────────────────────────── */
+    .hero{position:relative;overflow:hidden;min-height:400px}
+    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-overlay{position:relative;z-index:1;background:linear-gradient(90deg,rgba(7,26,51,.82) 45%,rgba(7,26,51,.18));min-height:400px;display:flex;align-items:center;padding:32px 0}
+    .hero-content{max-width:600px}
+    .hero-eyebrow{display:inline-flex;background:rgba(201,154,61,.18);border:1px solid rgba(201,154,61,.45);color:var(--gold2);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:800;letter-spacing:.04em;margin-bottom:16px}
+    .hero h1{font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.04em;color:#fff;font-weight:900}
+    .hero h1 span{color:var(--gold2)}
+    .hero-sub{color:rgba(255,255,255,.75);font-size:16px;line-height:1.6;margin-top:12px;max-width:480px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .hero-stats{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap}
+    .hero-stat{color:rgba(255,255,255,.65);font-size:13px;display:flex;align-items:center;gap:6px}
+    .hero-stat strong{color:#fff;font-size:16px;font-weight:800}
 
-    /* Filters */
-    .filters{margin:32px 0;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--shadow)}
-    .filters-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:12px}
-    .filters-grid.second{grid-template-columns:repeat(6,1fr);margin-top:12px}
-    input,select,textarea{width:100%;background:rgba(2,11,24,.75);border:1px solid var(--line);color:var(--white);padding:12px 14px;border-radius:14px;outline:none;font:inherit;font-size:14px}
-    input:focus,select:focus,textarea:focus{border-color:rgba(201,154,61,.5);box-shadow:0 0 0 3px rgba(201,154,61,.1)}
-    textarea{min-height:90px;resize:vertical}
-    label{display:block;font-size:11px;color:var(--muted);font-weight:800;margin:0 0 5px 3px;letter-spacing:.04em;text-transform:uppercase}
-    .field{min-width:0}
-    .filter-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+    /* ─── SEARCH BAR ──────────────────────────── */
+    .search-bar-wrap{background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--sh);position:sticky;top:72px;z-index:90}
+    .search-bar{display:flex;gap:8px;padding:14px 0;align-items:flex-end;flex-wrap:wrap}
+    .sb-field{display:flex;flex-direction:column;gap:4px;min-width:0}
+    .sb-field label{font-size:10px;font-weight:800;color:var(--text3);letter-spacing:.05em;text-transform:uppercase}
+    .sb-field input,.sb-field select{background:#f8fafc;border:1.5px solid var(--border);color:var(--text);padding:9px 12px;border-radius:8px;outline:none;font:inherit;font-size:13px;transition:.15s}
+    .sb-field input:focus,.sb-field select:focus{border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(7,26,51,.08)}
+    .sb-field.grow{flex:1;min-width:160px}
+    .sb-actions{display:flex;gap:8px;align-items:flex-end;padding-bottom:0}
+    .advanced-toggle{background:none;border:1.5px solid var(--border);color:var(--text2);border-radius:8px;padding:9px 14px;font:600 13px inherit;cursor:pointer;transition:.15s;white-space:nowrap}
+    .advanced-toggle:hover{border-color:var(--navy);color:var(--navy)}
+    .advanced-filters{display:none;border-top:1px solid var(--border);padding:14px 0}
+    .advanced-filters.open{display:block}
+    .adv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 
-    /* Sections */
-    .section{padding:52px 0}
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:22px}
-    .section-head p{margin-top:6px;font-size:15px}
-    .count{color:var(--gold2);font-weight:900;font-size:15px;white-space:nowrap}
+    /* ─── SECTION ─────────────────────────────── */
+    .section{padding:40px 0}
+    .section-title{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.03em;color:var(--text)}
+    .section-sub{color:var(--text2);font-size:14px;margin-top:4px}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+    .result-count{color:var(--text2);font-size:14px;font-weight:600}
+    .result-count span{color:var(--navy);font-size:18px;font-weight:900}
 
-    /* Vehicle grid */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .card{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:26px;overflow:hidden;box-shadow:var(--shadow);transition:.2s}
-    .card:hover{border-color:rgba(201,154,61,.3);transform:translateY(-2px)}
-    .cover-wrap{position:relative;background:#0d1a2a}
-    .cover{width:100%;height:235px;object-fit:contain;display:block;cursor:pointer;background:#071A33}
-    .img-fallback{opacity:.35}
-    .badge{position:absolute;top:12px;left:12px;background:rgba(2,11,24,.82);border:1px solid rgba(201,154,61,.35);color:var(--gold2);border-radius:999px;padding:6px 11px;font-weight:900;font-size:11px;backdrop-filter:blur(8px)}
-    .badge-featured{position:absolute;top:12px;right:12px;background:var(--gold);color:#061A33;border-radius:999px;padding:5px 10px;font-weight:900;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
-    .price{position:absolute;bottom:12px;right:12px;background:var(--gold);color:#061A33;border-radius:14px;padding:8px 12px;font-weight:900;font-size:14px}
-    .card-body{padding:16px}
-    .card h3{font-size:19px;line-height:1.15;letter-spacing:-.03em}
-    .card .headline{font-size:13px;color:var(--muted);margin-top:4px}
-    .specs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0}
-    .spec{border:1px solid var(--line);background:rgba(2,11,24,.4);border-radius:12px;padding:9px;color:var(--muted);font-size:11px}
-    .spec b{display:block;color:var(--white);font-size:13px;margin-top:2px}
-    .card-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .card-actions .btn{flex:1;justify-content:center;min-width:0}
-    .no-results{display:none;text-align:center;border:1px dashed rgba(255,255,255,.15);border-radius:26px;padding:40px;color:var(--muted);font-size:15px}
+    /* ─── VEHICLE GRID ────────────────────────── */
+    .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .vcard{background:var(--surface);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);border:1px solid var(--border);transition:.2s;display:flex;flex-direction:column}
+    .vcard:hover{box-shadow:var(--sh-lg);transform:translateY(-3px);border-color:rgba(201,154,61,.4)}
+    .vcard-img-wrap{position:relative;background:#f0f2f5;overflow:hidden}
+    .vcard-img{width:100%;height:210px;object-fit:contain;display:block;background:#f0f4f8;cursor:pointer;transition:.2s}
+    .vcard-img:hover{transform:scale(1.02)}
+    .vcard-badge{position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;border-radius:6px;padding:4px 10px;font-size:11px;font-weight:800;letter-spacing:.03em}
+    .vcard-featured{position:absolute;top:10px;right:10px;background:var(--gold);color:#071A33;border-radius:6px;padding:4px 10px;font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+    .vcard-price{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(7,26,51,.85),transparent);padding:22px 12px 10px;color:#fff;font-size:20px;font-weight:900;letter-spacing:-.03em}
+    .vcard-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:10px}
+    .vcard-name{font-size:15px;font-weight:800;color:var(--text);line-height:1.2}
+    .vcard-headline{font-size:12px;color:var(--text2);line-height:1.4}
+    .vcard-chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chip{display:inline-flex;align-items:center;gap:4px;background:#f0f4f8;border:1px solid var(--border);border-radius:6px;padding:4px 9px;font-size:11px;font-weight:700;color:var(--text2)}
+    .chip svg{flex-shrink:0}
+    .vcard-location{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:4px;margin-top:auto}
+    .vcard-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 14px 14px}
+    .vcard-actions .btn{justify-content:center;font-size:12px;padding:9px 8px;border-radius:8px}
+    .img-fallback{opacity:.4}
+    .no-results{display:none;text-align:center;background:var(--surface);border:2px dashed var(--border);border-radius:var(--r);padding:48px;color:var(--text2)}
     .no-results.show{display:block}
-    .no-results a{color:var(--gold2)}
+    .no-results a{color:var(--navy);font-weight:700}
 
-    /* Trust section */
-    .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .trust-item{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.04);padding:22px}
-    .trust-item .icon{width:46px;height:46px;border-radius:14px;background:rgba(201,154,61,.1);border:1px solid rgba(201,154,61,.28);display:grid;place-items:center;color:var(--gold2);font-size:20px;margin-bottom:12px}
-    .trust-item h3{font-size:16px;margin-bottom:4px}
+    /* ─── TRUST ───────────────────────────────── */
+    .trust-section{background:var(--navy);padding:48px 0}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .trust-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:22px;color:#fff}
+    .trust-icon{width:44px;height:44px;background:rgba(201,154,61,.15);border:1px solid rgba(201,154,61,.35);border-radius:10px;display:grid;place-items:center;font-size:20px;margin-bottom:12px}
+    .trust-card h3{font-size:15px;margin-bottom:6px;color:#fff}
+    .trust-card p{color:rgba(255,255,255,.6);font-size:13px;line-height:1.55}
 
-    /* SEO local section */
-    .seo-section{background:rgba(255,255,255,.02);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .seo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;margin-top:24px}
-    .seo-text h2{margin-bottom:8px}
-    .seo-text p{font-size:15px;margin-top:10px}
-    .neighborhoods{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-    .neighborhood{border:1px solid rgba(201,154,61,.25);background:rgba(201,154,61,.06);color:var(--gold2);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700}
-    .seo-card{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.04);padding:24px}
-    .seo-card .icon{width:44px;height:44px;border-radius:12px;background:rgba(201,154,61,.1);border:1px solid rgba(201,154,61,.28);display:grid;place-items:center;color:var(--gold2);font-size:20px;margin-bottom:14px}
-    .seo-card h3{font-size:19px;margin-bottom:6px}
-    .seo-card p{font-size:14px}
-    .seo-card .wa-num{color:var(--gold2);font-weight:900;margin-top:14px;font-size:15px}
+    /* ─── SEO LOCAL ───────────────────────────── */
+    .seo-section{padding:40px 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .seo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;margin-top:20px}
+    .seo-text h2{font-size:clamp(20px,2.5vw,28px);font-weight:900;letter-spacing:-.03em}
+    .seo-text p{font-size:14px;color:var(--text2);line-height:1.65;margin-top:10px}
+    .neighborhoods{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+    .nbhood{background:rgba(7,26,51,.06);border:1px solid rgba(7,26,51,.15);color:var(--navy);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700}
+    .seo-cta-card{background:var(--navy);border-radius:var(--r);padding:24px;color:#fff}
+    .seo-cta-card h3{font-size:18px;margin-bottom:8px}
+    .seo-cta-card p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6}
+    .seo-cta-card .wa-num{color:var(--gold2);font-size:15px;font-weight:800;margin:14px 0}
 
-    /* Form section */
-    .form-section{background:linear-gradient(135deg,rgba(7,26,51,.88),rgba(2,11,24,.96));border-top:1px solid var(--line);padding:52px 0}
-    .form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
-    .form-intro p{font-size:15px}
-    .contact-box{margin-top:18px;border:1px solid rgba(201,154,61,.25);border-radius:16px;padding:16px;background:rgba(201,154,61,.06)}
-    .contact-box p{font-size:14px}
-    form{border:1px solid rgba(201,154,61,.22);background:rgba(255,255,255,.04);border-radius:26px;padding:20px}
+    /* ─── FORM ────────────────────────────────── */
+    .form-section{background:var(--bg);padding:48px 0}
+    .form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start}
+    .form-intro h2{font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-.03em}
+    .form-intro p{font-size:14px;color:var(--text2);line-height:1.65;margin-top:8px}
+    .form-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;box-shadow:var(--sh)}
+    .form-box input,.form-box select,.form-box textarea{width:100%;background:#f8fafc;border:1.5px solid var(--border);color:var(--text);padding:11px 14px;border-radius:8px;outline:none;font:inherit;font-size:14px;margin-top:5px;transition:.15s}
+    .form-box input:focus,.form-box select:focus,.form-box textarea:focus{border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(7,26,51,.07)}
+    .form-box textarea{min-height:90px;resize:vertical}
+    .form-box label{display:block;font-size:11px;font-weight:800;color:var(--text3);letter-spacing:.05em;text-transform:uppercase;margin-top:12px}
+    .form-box label:first-child{margin-top:0}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .mt{margin-top:12px}
+    .contact-badge{display:flex;align-items:center;gap:12px;background:rgba(7,26,51,.05);border:1px solid rgba(7,26,51,.1);border-radius:10px;padding:14px;margin-top:18px}
+    .contact-badge-icon{width:40px;height:40px;background:var(--navy);border-radius:10px;display:grid;place-items:center;flex-shrink:0}
 
-    /* Footer */
-    footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13px}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-    /* Modal */
-    .details-modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:flex-start;justify-content:center;z-index:200;padding:16px;overflow-y:auto}
-    .details-modal.open{display:flex}
-    .modal-box{width:min(1060px,100%);background:#061A33;border:1px solid rgba(201,154,61,.3);border-radius:26px;box-shadow:var(--shadow);margin:auto}
-    .modal-content{padding:20px}
-    .modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px}
-    .modal-head h2{font-size:clamp(20px,3vw,28px);letter-spacing:-.03em}
-    .modal-subtitle{font-size:14px;color:var(--muted);margin-top:4px}
-    .close-btn{background:rgba(255,255,255,.08);border:1px solid var(--line);color:white;border-radius:12px;padding:9px 14px;cursor:pointer;font-size:14px;white-space:nowrap;flex-shrink:0}
-    .close-btn:hover,.close-btn:focus-visible{background:rgba(255,255,255,.15);outline:2px solid var(--line);outline-offset:2px}
-
-    /* Gallery */
-    .gallery-main-wrap{position:relative}
-    .gallery-main{width:100%;height:420px;object-fit:contain;border-radius:18px;border:1px solid var(--line);display:block;background:#061828;cursor:zoom-in}
-    .gallery-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(2,11,24,.78);border:1px solid var(--line);color:var(--white);border-radius:10px;padding:10px 13px;cursor:pointer;font-size:18px;backdrop-filter:blur(8px);line-height:1}
-    .gallery-nav:hover{background:rgba(2,11,24,.95)}
+    /* ─── MODAL ───────────────────────────────── */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:flex-start;justify-content:center;z-index:200;padding:16px;overflow-y:auto}
+    .modal-overlay.open{display:flex}
+    .modal-box{width:min(1000px,100%);background:var(--surface);border-radius:14px;box-shadow:var(--sh-lg);margin:auto;overflow:hidden}
+    .modal-header{background:var(--navy);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .modal-header h2{color:#fff;font-size:clamp(16px,2.5vw,22px);letter-spacing:-.03em}
+    .modal-header p{color:rgba(255,255,255,.65);font-size:13px;margin-top:2px}
+    .modal-close{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;font-weight:700;flex-shrink:0}
+    .modal-close:hover{background:rgba(255,255,255,.22)}
+    .modal-body{padding:20px}
+    .gallery-main-wrap{position:relative;background:#f0f4f8;border-radius:10px;overflow:hidden}
+    .gallery-main{width:100%;height:380px;object-fit:contain;display:block;background:#f0f4f8;cursor:zoom-in}
+    .gallery-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(7,26,51,.7);border:0;color:#fff;border-radius:8px;padding:10px 13px;cursor:pointer;font-size:20px;line-height:1;transition:.15s}
+    .gallery-nav:hover{background:rgba(7,26,51,.9)}
     .gallery-nav.prev{left:10px}
     .gallery-nav.next{right:10px}
-    .gallery-thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 0 4px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;margin-top:2px}
-    .gallery-thumbs::-webkit-scrollbar{height:4px}
-    .gallery-thumbs::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
-    .thumb{width:88px;height:62px;object-fit:contain;background:#061828;border-radius:10px;border:2px solid transparent;cursor:pointer;flex-shrink:0;transition:.15s}
+    .gallery-thumbs{display:flex;gap:8px;overflow-x:auto;padding:10px 0;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+    .gallery-thumbs::-webkit-scrollbar{height:3px}
+    .gallery-thumbs::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+    .thumb{width:80px;height:58px;object-fit:contain;background:#f0f4f8;border-radius:8px;border:2px solid transparent;cursor:pointer;flex-shrink:0;transition:.15s}
     .thumb:hover,.thumb.active{border-color:var(--gold)}
+    .modal-info{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+    .modal-specs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .mspec{background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:10px}
+    .mspec-label{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .mspec-value{font-size:14px;font-weight:800;color:var(--text);margin-top:2px}
+    .modal-highlights{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+    .htag{background:rgba(201,154,61,.1);border:1px solid rgba(201,154,61,.3);color:#7a5c1e;border-radius:6px;padding:5px 11px;font-size:12px;font-weight:700}
+    .modal-desc{font-size:14px;color:var(--text2);line-height:1.65;margin-top:12px}
+    .modal-price-box{background:var(--navy);border-radius:10px;padding:20px;color:#fff;text-align:center}
+    .modal-price-label{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase}
+    .modal-price-value{font-size:32px;font-weight:900;letter-spacing:-.04em;color:var(--gold2);margin:4px 0}
+    .modal-price-sub{font-size:12px;color:rgba(255,255,255,.55)}
+    .modal-cta-btns{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+    .modal-cta-btns .btn{justify-content:center;padding:12px;border-radius:8px;font-size:14px}
 
-    /* Modal details */
-    .modal-specs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-    .modal-highlights{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-    .highlight-tag{border:1px solid rgba(201,154,61,.28);background:rgba(201,154,61,.07);color:var(--gold2);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700}
-    .modal-description{font-size:15px;color:rgba(247,247,242,.7);line-height:1.65;margin-bottom:10px}
-    .modal-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-    .modal-actions .btn{flex:1;justify-content:center}
-
-    /* Floating WhatsApp */
-    .wa-float{position:fixed;bottom:24px;right:24px;z-index:150;background:#25D366;color:#fff;border:0;border-radius:999px;padding:14px 18px;font-weight:900;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(37,211,102,.3);transition:.2s;text-decoration:none}
-    .wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,.4)}
-
-    /* Lightbox */
+    /* ─── LIGHTBOX ────────────────────────────── */
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.97);display:none;z-index:400;flex-direction:column;align-items:center;justify-content:center}
     .lightbox.open{display:flex}
-    .lightbox-img-wrap{flex:1;width:100%;display:flex;align-items:center;justify-content:center;padding:56px 80px;min-height:0;box-sizing:border-box}
-    .lightbox-img-wrap img{max-width:100%;max-height:100%;object-fit:contain;display:block;user-select:none;border-radius:4px}
-    .lightbox-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:50%;width:44px;height:44px;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:1}
-    .lightbox-close:hover{background:rgba(255,255,255,.24)}
-    .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;width:54px;height:54px;cursor:pointer;font-size:32px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:1;transition:.15s}
-    .lightbox-nav:hover{background:rgba(255,255,255,.22)}
-    .lightbox-nav.lb-prev{left:14px}
-    .lightbox-nav.lb-next{right:14px}
-    .lightbox-counter{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.65);font-size:13px;font-weight:700;background:rgba(0,0,0,.55);padding:5px 16px;border-radius:999px;white-space:nowrap}
-    .lightbox-title{position:absolute;top:14px;left:14px;color:rgba(255,255,255,.75);font-size:13px;font-weight:700;max-width:calc(100% - 80px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    @media(max-width:620px){
-      .lightbox-img-wrap{padding:48px 8px}
-      .lightbox-nav{width:40px;height:40px;font-size:24px}
-      .lightbox-nav.lb-prev{left:4px}
-      .lightbox-nav.lb-next{right:4px}
-    }
+    .lb-img-wrap{flex:1;width:100%;display:flex;align-items:center;justify-content:center;padding:56px 80px;min-height:0}
+    .lb-img-wrap img{max-width:100%;max-height:100%;object-fit:contain;display:block;user-select:none}
+    .lb-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:50%;width:44px;height:44px;cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:1}
+    .lb-close:hover{background:rgba(255,255,255,.24)}
+    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:50%;width:54px;height:54px;cursor:pointer;font-size:32px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:1;transition:.15s}
+    .lb-nav:hover{background:rgba(255,255,255,.22)}
+    .lb-prev{left:14px}
+    .lb-next{right:14px}
+    .lb-counter{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:13px;font-weight:700;background:rgba(0,0,0,.5);padding:5px 16px;border-radius:999px;white-space:nowrap}
+    .lb-title{position:absolute;top:14px;left:14px;color:rgba(255,255,255,.75);font-size:13px;font-weight:700;max-width:calc(100% - 80px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-    /* Responsive */
-    @media(max-width:920px){
-      .hero-grid,.form-grid,.seo-grid{grid-template-columns:1fr}
-      .filters-grid,.filters-grid.second{grid-template-columns:1fr 1fr}
-      .grid{grid-template-columns:1fr 1fr}
-      .trust{grid-template-columns:1fr 1fr}
-      .menu{display:none}
+    /* ─── FOOTER ──────────────────────────────── */
+    .footer{background:var(--navy);padding:28px 0;color:rgba(255,255,255,.5);font-size:13px;border-top:1px solid rgba(255,255,255,.08)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-logo{height:40px;width:auto;object-fit:contain}
+
+    /* ─── FLOATING WA ─────────────────────────── */
+    .wa-float{position:fixed;bottom:24px;right:24px;z-index:150;background:var(--green);color:#fff;border:0;border-radius:999px;padding:14px 18px;font:700 14px inherit;cursor:pointer;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(37,211,102,.35);transition:.2s;text-decoration:none}
+    .wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,.45)}
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    @media(max-width:960px){
+      .vgrid{grid-template-columns:1fr 1fr}
+      .trust-grid{grid-template-columns:1fr 1fr}
+      .seo-grid,.form-grid{grid-template-columns:1fr}
+      .header-nav{display:none}
       .hamburger{display:block}
-      .hero-cover{height:260px}
-      .modal-specs{grid-template-columns:repeat(2,1fr)}
+      .search-bar{flex-wrap:wrap}
+      .sb-field.grow{min-width:calc(50% - 8px)}
+      .adv-grid{grid-template-columns:repeat(3,1fr)}
+      .modal-info{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
     }
     @media(max-width:620px){
-      .grid,.trust,.filters-grid,.filters-grid.second,.stats,.form-row{grid-template-columns:1fr}
-      .cover{height:210px}
-      .gallery-main{height:260px}
-      h1{font-size:38px}
-      .logo-text small{display:none}
+      .vgrid{grid-template-columns:1fr}
+      .trust-grid{grid-template-columns:1fr}
+      .vcard-img{height:200px}
+      .gallery-main{height:250px}
+      .lb-img-wrap{padding:50px 8px}
+      .lb-nav{width:40px;height:40px;font-size:24px}
+      .lb-prev{left:4px}
+      .lb-next{right:4px}
+      .form-row{grid-template-columns:1fr}
+      .adv-grid{grid-template-columns:1fr 1fr}
+      .hero-overlay{min-height:320px}
+      .modal-specs-grid{grid-template-columns:1fr 1fr}
       .wa-float .wa-label{display:none}
       .wa-float{padding:14px}
+      .hero-stats{gap:12px}
     }
   </style>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="container nav">
-    <a class="logo" href="#top" aria-label="Vitrine Auto Leste — página inicial">
-      <div class="mark" aria-hidden="true"></div>
-      <div class="logo-text">Vitrine <span class="gold-word">Auto</span> Leste<small>Veículos selecionados da Zona Leste</small></div>
+<!-- ═══ HEADER ═══════════════════════════════════════════ -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#top" aria-label="Vitrine Auto Leste — início">
+      <img src="assets/brand/brand-01.png" alt="Vitrine Auto Leste" class="site-logo">
     </a>
-    <nav class="menu" aria-label="Navegação principal">
+    <nav class="header-nav" aria-label="Navegação principal">
       <a href="#veiculos">Veículos</a>
       <a href="#vantagens">Vantagens</a>
       <a href="#financiamento">Financiamento</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a class="btn gold" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste%20e%20quero%20ver%20os%20ve%C3%ADculos%20dispon%C3%ADveis." target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
-    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste%20e%20quero%20ver%20os%20ve%C3%ADculos." target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
-<div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Menu de navegação">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar menu">✕</button>
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Menu">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar">✕</button>
   <a href="#veiculos" onclick="closeMobileMenu()">Veículos</a>
   <a href="#vantagens" onclick="closeMobileMenu()">Vantagens</a>
   <a href="#financiamento" onclick="closeMobileMenu()">Financiamento</a>
   <a href="#contato" onclick="closeMobileMenu()">Contato</a>
-  <a class="btn gold" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste." target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+  <a class="btn btn-primary btn-lg" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste." target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </div>
 
 <main id="top">
 
-  <section class="hero" aria-label="Apresentação">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Venda direta · Fotos reais · Atendimento rápido</div>
-        <h1>Seu próximo carro está mais perto.</h1>
-        <p>Veículos usados selecionados com apresentação premium, informações claras, financiamento facilitado e atendimento direto pelo WhatsApp na Zona Leste de São Paulo.</p>
+<!-- ═══ HERO BANNER ══════════════════════════════════════ -->
+<section class="hero">
+  <img class="hero-bg" src="assets/brand/brand-02.png" alt="Vitrine Auto Leste — Veículos selecionados da Zona Leste">
+  <div class="hero-overlay">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Zona Leste · São Paulo</div>
+        <h1>Encontre seu <span>próximo carro</span> aqui.</h1>
+        <p class="hero-sub">Veículos usados selecionados com fotos reais, procedência garantida e atendimento direto pelo WhatsApp.</p>
         <div class="hero-actions">
-          <a class="btn gold" href="#veiculos">Ver veículos disponíveis</a>
-          <a class="btn ghost" href="#financiamento">Simular compra</a>
+          <a class="btn btn-primary btn-lg" href="#veiculos">Ver veículos disponíveis</a>
+          <a class="btn btn-outline btn-lg" href="#financiamento" style="color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08)">Simular financiamento</a>
         </div>
-        <div class="stats">
-          <div class="stat"><strong>8</strong><span>veículos disponíveis</span></div>
-          <div class="stat"><strong>100%</strong><span>atendimento direto</span></div>
-          <div class="stat"><strong>WhatsApp</strong><span>21 97911-2975</span></div>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-inner">
-          <img class="hero-cover" id="heroCover" src="" alt="Veículo em destaque da Vitrine Auto Leste" loading="eager" onerror="imgFallback(this)">
-          <div class="hero-meta"><b>Destaque: </b><span id="heroTitle">Veículo selecionado</span></div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>8</strong> veículos</div>
+          <div class="hero-stat" style="color:rgba(255,255,255,.35)">|</div>
+          <div class="hero-stat"><strong>100%</strong> atendimento direto</div>
+          <div class="hero-stat" style="color:rgba(255,255,255,.35)">|</div>
+          <div class="hero-stat">WhatsApp <strong>21 97911-2975</strong></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="veiculos" class="section" aria-label="Catálogo de veículos">
-    <div class="container">
-      <div class="section-head">
+<!-- ═══ SEARCH / FILTER BAR ══════════════════════════════ -->
+<div class="search-bar-wrap" id="veiculos" aria-label="Busca e filtros">
+  <div class="container">
+    <div class="search-bar">
+      <div class="sb-field grow">
+        <label for="search">Buscar</label>
+        <input id="search" type="search" placeholder="Marca, modelo, versão, cor, câmbio…"/>
+      </div>
+      <div class="sb-field">
+        <label for="make">Marca</label>
+        <select id="make"><option value="">Todas</option></select>
+      </div>
+      <div class="sb-field">
+        <label for="category">Categoria</label>
+        <select id="category"><option value="">Todas</option></select>
+      </div>
+      <div class="sb-field">
+        <label for="transmission">Câmbio</label>
+        <select id="transmission"><option value="">Todos</option></select>
+      </div>
+      <div class="sb-field">
+        <label for="fuel">Combustível</label>
+        <select id="fuel"><option value="">Todos</option></select>
+      </div>
+      <div class="sb-actions">
+        <button class="btn btn-navy" id="applyFilters" style="border-radius:8px;padding:10px 18px">Buscar</button>
+        <button class="advanced-toggle" id="advToggle">+ Filtros</button>
+      </div>
+    </div>
+    <div class="advanced-filters" id="advFilters">
+      <div class="adv-grid">
+        <div class="sb-field"><label for="minPrice">Preço mín.</label><input id="minPrice" type="number" inputmode="numeric" placeholder="0"/></div>
+        <div class="sb-field"><label for="maxPrice">Preço máx.</label><input id="maxPrice" type="number" inputmode="numeric" placeholder="120000"/></div>
+        <div class="sb-field"><label for="maxKm">KM máx.</label><input id="maxKm" type="number" inputmode="numeric" placeholder="ex.: 80000"/></div>
+        <div class="sb-field"><label for="minYear">Ano mín.</label><input id="minYear" type="number" inputmode="numeric" placeholder="2010"/></div>
+        <div class="sb-field"><label for="color">Cor</label><select id="color"><option value="">Todas</option></select></div>
+        <div class="sb-field"><label for="sort">Ordenar</label>
+          <select id="sort">
+            <option value="featured">Destaques primeiro</option>
+            <option value="priceAsc">Menor preço</option>
+            <option value="priceDesc">Maior preço</option>
+            <option value="yearDesc">Mais novos</option>
+            <option value="kmAsc">Menor KM</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="btn btn-navy" id="applyFilters2" style="border-radius:8px;padding:9px 18px">Aplicar</button>
+        <button class="advanced-toggle" id="clearFilters">Limpar filtros</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ VEHICLES GRID ════════════════════════════════════ -->
+<section class="section" aria-label="Catálogo de veículos">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title">Veículos disponíveis</h2>
+        <p class="section-sub">Todos com fotos reais, dados completos e atendimento direto</p>
+      </div>
+      <div class="result-count" aria-live="polite" aria-atomic="true"><span id="resultCount">0</span> encontrados</div>
+    </div>
+    <div class="vgrid" id="vehicleGrid" role="list" aria-label="Lista de veículos"></div>
+    <div class="no-results" id="noResults" role="status">
+      Nenhum veículo encontrado com esses filtros.
+      <a href="#" onclick="clearAll();return false;">Limpar filtros</a> ou
+      <a href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Quero%20ver%20os%20ve%C3%ADculos%20dispon%C3%ADveis." target="_blank" rel="noopener noreferrer">chamar no WhatsApp</a>.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST / VANTAGENS ════════════════════════════════ -->
+<section id="vantagens" class="trust-section" aria-label="Por que comprar conosco">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:28px">
+      <div>
+        <h2 class="section-title" style="color:#fff">Por que comprar conosco</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.5)">Compra mais clara, rápida e segura na Zona Leste</p>
+      </div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">✓</div>
+        <h3>Procedência garantida</h3>
+        <p>Veículos selecionados com dados claros, negociação transparente e histórico verificado.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">📷</div>
+        <h3>Fotos reais</h3>
+        <p>Galeria organizada por veículo para você avaliar o carro antes mesmo da visita.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">💳</div>
+        <h3>Financiamos</h3>
+        <p>Facilitamos sua compra e direcionamos para as melhores condições de financiamento.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">💬</div>
+        <h3>Atendimento direto</h3>
+        <p>Fale pelo WhatsApp, tire dúvidas, receba vídeos e agende visita sem burocracia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SEO LOCAL ════════════════════════════════════════ -->
+<section class="seo-section" aria-label="Zona Leste de São Paulo">
+  <div class="container">
+    <h2 class="section-title">Carros usados na Zona Leste de São Paulo</h2>
+    <div class="seo-grid">
+      <div class="seo-text">
+        <p>A Vitrine Auto Leste atende quem busca <strong>veículos usados de qualidade na Zona Leste de SP</strong>. Atendimento direto, sem intermediários, com fotos reais, preços justos e negociação segura pelo WhatsApp.</p>
+        <p>Atendemos toda a Zona Leste: São Miguel Paulista, Itaim Paulista, Guaianases, Cidade Tiradentes, Ermelino Matarazzo, Penha, São Mateus, Vila Prudente e Grande ABC.</p>
+        <p>Procurando <strong>hatch</strong>, <strong>SUV</strong>, <strong>sedan</strong>, <strong>utilitário</strong> ou <strong>importado</strong> com custo-benefício? Fale no WhatsApp e receba opções personalizadas.</p>
+        <div class="neighborhoods">
+          <span class="nbhood">São Miguel Paulista</span><span class="nbhood">Itaim Paulista</span><span class="nbhood">Guaianases</span><span class="nbhood">Cidade Tiradentes</span><span class="nbhood">Ermelino Matarazzo</span><span class="nbhood">Penha</span><span class="nbhood">São Mateus</span><span class="nbhood">Vila Prudente</span><span class="nbhood">Grande ABC</span>
+        </div>
+      </div>
+      <div class="seo-cta-card">
+        <h3>Atendimento 100% pelo WhatsApp</h3>
+        <p>Não precisa sair de casa para dar o primeiro passo. Converse, veja fotos, negocie e agende visita sem sair do WhatsApp.</p>
+        <p class="wa-num">21 97911-2975</p>
+        <a class="btn btn-primary btn-lg" style="width:100%;justify-content:center;border-radius:8px" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste%20e%20quero%20ver%20os%20ve%C3%ADculos." target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Conversar agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINANCIAMENTO / FORM ══════════════════════════════ -->
+<section id="financiamento" class="form-section" aria-label="Simular financiamento">
+  <div class="container form-grid">
+    <div class="form-intro">
+      <p style="font-size:11px;font-weight:800;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">WhatsApp direto</p>
+      <h2 class="section-title">Quer simular ou agendar visita?</h2>
+      <p>Preencha o formulário. Ao enviar, os dados vão direto para o WhatsApp da Vitrine Auto Leste, organizados e prontos para resposta.</p>
+      <div class="contact-badge">
+        <div class="contact-badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
         <div>
-          <div class="eyebrow">Catálogo</div>
-          <h2>Veículos disponíveis</h2>
-          <p>Filtre por preço, KM, ano, marca, câmbio, combustível e categoria.</p>
-        </div>
-        <div class="count" aria-live="polite" aria-atomic="true"><span id="resultCount">0</span> encontrados</div>
-      </div>
-
-      <div class="filters" aria-label="Filtros de veículos">
-        <div class="filters-grid">
-          <div class="field"><label for="search">Buscar</label><input id="search" type="search" placeholder="Marca, modelo, câmbio, cor, combustível…" aria-label="Buscar veículos"/></div>
-          <div class="field"><label for="make">Marca</label><select id="make" aria-label="Filtrar por marca"><option value="">Todas</option></select></div>
-          <div class="field"><label for="category">Categoria</label><select id="category" aria-label="Filtrar por categoria"><option value="">Todas</option></select></div>
-          <div class="field"><label for="transmission">Câmbio</label><select id="transmission" aria-label="Filtrar por câmbio"><option value="">Todos</option></select></div>
-          <div class="field"><label for="fuel">Combustível</label><select id="fuel" aria-label="Filtrar por combustível"><option value="">Todos</option></select></div>
-        </div>
-        <div class="filters-grid second">
-          <div class="field"><label for="minPrice">Preço mín.</label><input id="minPrice" type="number" inputmode="numeric" placeholder="0"/></div>
-          <div class="field"><label for="maxPrice">Preço máx.</label><input id="maxPrice" type="number" inputmode="numeric" placeholder="120000"/></div>
-          <div class="field"><label for="maxKm">KM máx.</label><input id="maxKm" type="number" inputmode="numeric" placeholder="ex.: 80000"/></div>
-          <div class="field"><label for="minYear">Ano mín.</label><input id="minYear" type="number" inputmode="numeric" placeholder="2010"/></div>
-          <div class="field"><label for="color">Cor</label><select id="color" aria-label="Filtrar por cor"><option value="">Todas</option></select></div>
-          <div class="field"><label for="sort">Ordenar</label>
-            <select id="sort">
-              <option value="featured">Destaques</option>
-              <option value="priceAsc">Menor preço</option>
-              <option value="priceDesc">Maior preço</option>
-              <option value="yearDesc">Mais novos</option>
-              <option value="kmAsc">Menor KM</option>
-            </select>
-          </div>
-        </div>
-        <div class="filter-actions">
-          <button class="btn gold" id="applyFilters">Aplicar filtros</button>
-          <button class="btn ghost" id="clearFilters">Limpar filtros</button>
-        </div>
-      </div>
-
-      <div class="grid" id="vehicleGrid" role="list" aria-label="Lista de veículos"></div>
-      <div class="no-results" id="noResults" role="status">
-        Nenhum veículo encontrado com esses filtros.
-        <a href="#" onclick="clearAll();return false;">Limpe os filtros</a> ou
-        <a href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Quero%20ver%20os%20ve%C3%ADculos%20dispon%C3%ADveis." target="_blank" rel="noopener noreferrer">chame no WhatsApp</a>.
-      </div>
-    </div>
-  </section>
-
-  <section id="vantagens" class="section" aria-label="Vantagens de comprar na Vitrine Auto Leste">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Por que comprar conosco</div>
-          <h2>Compra mais clara, rápida e segura</h2>
-        </div>
-      </div>
-      <div class="trust">
-        <div class="trust-item">
-          <div class="icon" aria-hidden="true">✓</div>
-          <h3>Procedência garantida</h3>
-          <p>Veículos selecionados com dados claros, negociação transparente e histórico verificado.</p>
-        </div>
-        <div class="trust-item">
-          <div class="icon" aria-hidden="true">📷</div>
-          <h3>Fotos reais</h3>
-          <p>Galeria organizada por veículo para você avaliar o carro antes mesmo da visita.</p>
-        </div>
-        <div class="trust-item">
-          <div class="icon" aria-hidden="true">💳</div>
-          <h3>Financiamos</h3>
-          <p>Facilitamos sua compra e direcionamos para as melhores condições de financiamento disponíveis.</p>
-        </div>
-        <div class="trust-item">
-          <div class="icon" aria-hidden="true">💬</div>
-          <h3>Atendimento direto</h3>
-          <p>Fale pelo WhatsApp, tire dúvidas, receba vídeos e agende sua visita sem burocracia.</p>
+          <div style="font-weight:800;color:var(--text);font-size:14px">21 97911-2975</div>
+          <div style="font-size:12px;color:var(--text2)">Respondemos rápido, sem burocracia</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section seo-section" aria-label="Atendimento na Zona Leste de São Paulo">
-    <div class="container">
-      <div class="eyebrow">Zona Leste de São Paulo</div>
-      <div class="seo-grid">
-        <div class="seo-text">
-          <h2>Carros usados selecionados para a Zona Leste</h2>
-          <p>A Vitrine Auto Leste atende quem busca <strong style="color:var(--white)">veículos usados de qualidade na Zona Leste de São Paulo</strong>. Somos uma operação com atendimento direto, sem intermediários, focada em veículos com fotos reais, preços justos e negociação segura.</p>
-          <p>Atendemos toda a Zona Leste: São Miguel Paulista, Itaim Paulista, Guaianases, Cidade Tiradentes, Ermelino Matarazzo, Penha, São Mateus, Vila Prudente e Grande ABC.</p>
-          <p>Buscando <strong style="color:var(--white)">hatch usados</strong>, <strong style="color:var(--white)">SUV</strong>, <strong style="color:var(--white)">sedan</strong>, <strong style="color:var(--white)">utilitário</strong> ou <strong style="color:var(--white)">importados</strong> com bom custo-benefício? Converse pelo WhatsApp e receba opções personalizadas.</p>
-          <div class="neighborhoods" aria-label="Bairros e regiões atendidos">
-            <span class="neighborhood">São Miguel Paulista</span>
-            <span class="neighborhood">Itaim Paulista</span>
-            <span class="neighborhood">Guaianases</span>
-            <span class="neighborhood">Cidade Tiradentes</span>
-            <span class="neighborhood">Ermelino Matarazzo</span>
-            <span class="neighborhood">Penha</span>
-            <span class="neighborhood">São Mateus</span>
-            <span class="neighborhood">Vila Prudente</span>
-            <span class="neighborhood">Grande ABC</span>
-          </div>
-        </div>
-        <div>
-          <div class="seo-card">
-            <div class="icon" aria-hidden="true">📍</div>
-            <h3>Atendimento 100% pelo WhatsApp</h3>
-            <p>Não precisa sair de casa para dar o primeiro passo. Converse pelo WhatsApp, veja as fotos, tire dúvidas e negocie antes da visita presencial.</p>
-            <p class="wa-num">WhatsApp: 21 97911-2975</p>
-            <a class="btn gold" style="margin-top:16px;display:inline-flex" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste%20e%20quero%20saber%20mais%20sobre%20os%20ve%C3%ADculos%20dispon%C3%ADveis." target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Conversar agora</a>
-          </div>
+    <form class="form-box" id="leadForm" novalidate>
+      <div class="form-row">
+        <div><label for="leadName">Nome</label><input id="leadName" required placeholder="Seu nome completo"/></div>
+        <div><label for="leadPhone">WhatsApp</label><input id="leadPhone" type="tel" required placeholder="(11) 99999-9999"/></div>
+      </div>
+      <div class="form-row" style="margin-top:0">
+        <div><label for="leadVehicle">Veículo de interesse</label><select id="leadVehicle"><option value="">Selecione o veículo</option></select></div>
+        <div><label for="leadIntent">Tipo de compra</label>
+          <select id="leadIntent">
+            <option>Financiamento</option><option>À vista</option><option>Tenho veículo na troca</option><option>Quero agendar visita</option>
+          </select>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="financiamento" class="form-section" aria-label="Simular financiamento ou agendar visita">
-    <div class="container form-grid">
-      <div class="form-intro">
-        <div class="eyebrow">WhatsApp direto</div>
-        <h2>Quer simular ou agendar visita?</h2>
-        <p>Preencha o formulário. Ao enviar, os dados serão organizados automaticamente em uma mensagem para o WhatsApp da Vitrine Auto Leste.</p>
-        <div class="contact-box">
-          <p><strong style="color:var(--gold2)">WhatsApp:</strong> 21 97911-2975</p>
-          <p style="margin-top:6px">Respondemos rápido, sem burocracia.</p>
-        </div>
+      <div class="form-row" style="margin-top:0">
+        <div><label for="leadEntry">Entrada disponível</label><input id="leadEntry" placeholder="Ex.: R$ 10.000"/></div>
+        <div><label for="leadTime">Melhor horário</label><input id="leadTime" placeholder="Ex.: hoje à tarde"/></div>
       </div>
-      <form id="leadForm" novalidate>
-        <div class="form-row">
-          <div class="field"><label for="leadName">Nome</label><input id="leadName" required placeholder="Seu nome completo"/></div>
-          <div class="field"><label for="leadPhone">WhatsApp</label><input id="leadPhone" type="tel" required placeholder="(11) 99999-9999"/></div>
-        </div>
-        <div class="form-row mt">
-          <div class="field"><label for="leadVehicle">Veículo de interesse</label><select id="leadVehicle"><option value="">Selecione o veículo</option></select></div>
-          <div class="field"><label for="leadIntent">Tipo de compra</label>
-            <select id="leadIntent">
-              <option>Financiamento</option>
-              <option>À vista</option>
-              <option>Tenho veículo na troca</option>
-              <option>Quero agendar visita</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row mt">
-          <div class="field"><label for="leadEntry">Entrada disponível</label><input id="leadEntry" placeholder="Ex.: R$ 10.000"/></div>
-          <div class="field"><label for="leadTime">Melhor horário</label><input id="leadTime" placeholder="Ex.: hoje à tarde"/></div>
-        </div>
-        <div class="field mt"><label for="leadMessage">Mensagem / observações</label><textarea id="leadMessage" placeholder="Conte o que você procura ou tire sua dúvida"></textarea></div>
-        <button class="btn gold" style="width:100%;justify-content:center;margin-top:16px" type="submit">Enviar para WhatsApp</button>
-      </form>
-    </div>
-  </section>
+      <div><label for="leadMessage">Mensagem / observações</label><textarea id="leadMessage" placeholder="Conte o que você procura ou tire sua dúvida"></textarea></div>
+      <button class="btn btn-wa" style="width:100%;justify-content:center;margin-top:16px;border-radius:8px;padding:13px" type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Enviar para WhatsApp</button>
+    </form>
+  </div>
+</section>
 
 </main>
 
-<footer id="contato">
+<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer" id="contato">
   <div class="container footer-inner">
-    <a class="logo" href="#top" aria-label="Vitrine Auto Leste">
-      <div class="mark" aria-hidden="true"></div>
-      <div class="logo-text">Vitrine <span class="gold-word">Auto</span> Leste<small>Veículos selecionados da Zona Leste</small></div>
+    <a href="#top" aria-label="Vitrine Auto Leste">
+      <img src="assets/brand/brand-01.png" alt="Vitrine Auto Leste" class="footer-logo">
     </a>
     <div>© 2026 Vitrine Auto Leste · WhatsApp: 21 97911-2975 · Zona Leste, São Paulo/SP</div>
   </div>
 </footer>
 
-<div class="details-modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<!-- ═══ MODAL ══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-box">
-    <div class="modal-content">
-      <div class="modal-head">
-        <div>
-          <h2 id="modalTitle"></h2>
-          <p class="modal-subtitle" id="modalSubtitle"></p>
-        </div>
-        <button class="close-btn" id="closeModal" aria-label="Fechar detalhes do veículo">✕ Fechar</button>
+    <div class="modal-header">
+      <div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalSubtitle"></p>
       </div>
+      <button class="modal-close" id="closeModal" aria-label="Fechar">✕ Fechar</button>
+    </div>
+    <div class="modal-body">
       <div class="gallery-main-wrap">
-        <img id="modalMain" class="gallery-main" src="" alt="" loading="eager" onerror="imgFallback(this)" onclick="openLightboxFromModal()" title="Clique para ver em tela cheia">
+        <img id="modalMain" class="gallery-main" src="" alt="" loading="eager" onerror="imgFallback(this)" onclick="openLightboxFromModal()" title="Clique para tela cheia">
         <button class="gallery-nav prev" id="galleryPrev" aria-label="Foto anterior">&#8249;</button>
         <button class="gallery-nav next" id="galleryNext" aria-label="Próxima foto">&#8250;</button>
       </div>
-      <div class="gallery-thumbs" id="modalThumbs" aria-label="Miniaturas das fotos"></div>
-      <div class="modal-specs" id="modalSpecs"></div>
-      <div class="modal-highlights" id="modalHighlights"></div>
-      <p class="modal-description" id="modalDescription"></p>
-      <div class="modal-actions">
-        <a id="modalWhatsapp" class="btn gold" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chamar no WhatsApp</a>
-        <button class="btn ghost" id="modalLead">Simular financiamento</button>
+      <div class="gallery-thumbs" id="modalThumbs" aria-label="Miniaturas"></div>
+      <div class="modal-info">
+        <div>
+          <div class="modal-specs-grid" id="modalSpecs"></div>
+          <div class="modal-highlights" id="modalHighlights"></div>
+          <p class="modal-desc" id="modalDescription"></p>
+        </div>
+        <div>
+          <div class="modal-price-box">
+            <div class="modal-price-label">Preço</div>
+            <div class="modal-price-value" id="modalPrice"></div>
+            <div class="modal-price-sub" id="modalKmLoc"></div>
+          </div>
+          <div class="modal-cta-btns">
+            <a id="modalWhatsapp" class="btn btn-wa" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chamar no WhatsApp</a>
+            <button class="btn btn-outline" id="modalLead" style="border-radius:8px;justify-content:center;padding:11px">Simular financiamento</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<a class="wa-float" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste%20e%20quero%20ver%20os%20ve%C3%ADculos%20dispon%C3%ADveis." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp">
+<!-- ═══ LIGHTBOX ══════════════════════════════════════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto em tela cheia">
+  <span class="lb-title" id="lbTitle"></span>
+  <button class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">&#8249;</button>
+  <div class="lb-img-wrap"><img id="lbImg" src="" alt="" draggable="false"></div>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima">&#8250;</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<!-- ═══ FLOATING WHATSAPP ════════════════════════════════ -->
+<a class="wa-float" href="https://wa.me/5521979112975?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitrine%20Auto%20Leste%20e%20quero%20ver%20os%20ve%C3%ADculos." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span class="wa-label">WhatsApp</span>
 </a>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem em tela cheia">
-  <span class="lightbox-title" id="lightboxTitle"></span>
-  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">✕</button>
-  <button class="lightbox-nav lb-prev" id="lightboxPrev" aria-label="Foto anterior">&#8249;</button>
-  <div class="lightbox-img-wrap">
-    <img id="lightboxImg" src="" alt="" draggable="false">
-  </div>
-  <button class="lightbox-nav lb-next" id="lightboxNext" aria-label="Próxima foto">&#8250;</button>
-  <div class="lightbox-counter" id="lightboxCounter"></div>
-</div>
-
 <script>
 const VEHICLES = [
-  {
-    "id":"nivus-2021-cinza","slug":"volkswagen-nivus-highline-tsi-2021","status":"Disponível","featured":true,
-    "make":"Volkswagen","model":"Nivus","version":"Highline TSI AD","name":"Volkswagen Nivus Highline TSI 2021",
-    "year":2021,"model_year":2021,"price":113900,"price_display":"R$ 113.900","km":47551,"km_display":"47.551 km",
-    "color":"Cinza","fuel":"Flex","transmission":"Automático","body":"SUV Coupé","category":"SUV","motor":"1.0 TSI Flex",
-    "doors":4,"location":"São Paulo/SP",
-    "headline":"SUV coupé automático, moderno e completo",
-    "description":"Nivus Highline TSI 2021 cinza, automático, com motor TSI Flex, painel digital, multimídia e excelente dirigibilidade. Uma opção moderna, confortável e com ótima liquidez para família, trabalho e uso diário.",
-    "highlights":["Motor TSI Flex","Câmbio automático","Painel digital","Multimídia","Porta-malas espaçoso","Financiamos"],
-    "images":["assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-01.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-02.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-03.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-04.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-05.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-06.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-07.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-08.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-09.png"],
-    "cover":"assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Volkswagen Nivus Highline TSI 2021 - R$ 113.900."
-  },
-  {
-    "id":"onix-lt-2013-prata","slug":"chevrolet-onix-lt-1-0-2013","status":"Disponível","featured":false,
-    "make":"Chevrolet","model":"Onix","version":"LT 1.0MT","name":"Chevrolet Onix LT 1.0 2013",
-    "year":2013,"model_year":2013,"price":48900,"price_display":"R$ 48.900","km":null,"km_display":"Consultar",
-    "color":"Prata","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.0 Flex",
-    "doors":4,"location":"Taubaté/SP",
-    "headline":"Hatch econômico e muito procurado",
-    "description":"Onix LT 1.0 2013 prata, hatch compacto com câmbio manual, bom custo-benefício e excelente aceitação no mercado. Ideal para uso diário, trabalho, faculdade e primeiro carro.",
-    "highlights":["Motor 1.0 Flex","Câmbio manual","Hatch compacto","Boa revenda","Manutenção acessível","Financiamos"],
-    "images":["assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-01.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-02.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-03.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-04.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-05.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-06.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-07.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-08.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-09.png"],
-    "cover":"assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Chevrolet Onix LT 1.0 2013 - R$ 48.900."
-  },
-  {
-    "id":"fiesta-2015-branco","slug":"ford-fiesta-hatch-1-5-s-2015-branco","status":"Disponível","featured":true,
-    "make":"Ford","model":"Fiesta","version":"HA 1.5L S","name":"Ford Fiesta Hatch 1.5 S 2015",
-    "year":2014,"model_year":2015,"price":48900,"price_display":"R$ 48.900","km":123910,"km_display":"123.910 km",
-    "color":"Branca","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.5 Flex 4 cilindros 16V",
-    "doors":4,"location":"Cotia/SP",
-    "headline":"Hatch 1.5 econômico, confiável e pronto para rodar",
-    "description":"Ford Fiesta Hatch 1.5 S 2014/2015 branco, motor 1.5 Flex 4 cilindros, câmbio manual e boa dirigibilidade. Ótima opção para quem busca custo-benefício, economia e manutenção acessível.",
-    "highlights":["Motor 1.5 Flex","4 cilindros 16V","Câmbio manual","Direção elétrica","Rodas de liga leve","Financiamos"],
-    "images":["assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-01.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-02.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-03.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-04.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-05.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-06.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-07.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-08.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-09.png"],
-    "cover":"assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Ford Fiesta Hatch 1.5 S 2015 - R$ 48.900."
-  },
-  {
-    "id":"sonata-2012-prata","slug":"hyundai-sonata-gls-2012","status":"Disponível","featured":true,
-    "make":"Hyundai","model":"Sonata","version":"GLS 2.4","name":"Hyundai Sonata GLS 2012",
-    "year":2011,"model_year":2012,"price":67900,"price_display":"R$ 67.900","km":null,"km_display":"Consultar",
-    "color":"Prata","fuel":"Gasolina","transmission":"Automático","body":"Sedan","category":"Sedan","motor":"2.4 16V Gasolina",
-    "doors":4,"location":"Belém/PA",
-    "headline":"Sedan premium, automático e com presença",
-    "description":"Hyundai Sonata GLS 2011/2012 prata, sedan grande com motor 2.4 gasolina, câmbio automático, acabamento superior e visual imponente. Ideal para quem busca conforto, espaço e presença.",
-    "highlights":["Motor 2.4","Câmbio automático","Sedan premium","Teto solar","Interior amplo","Financiamos"],
-    "images":["assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-01.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-02.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-03.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-04.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-05.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-06.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-07.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-08.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-09.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-10.png"],
-    "cover":"assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Hyundai Sonata GLS 2012 - R$ 67.900."
-  },
-  {
-    "id":"fiesta-2010-preto","slug":"ford-fiesta-flex-2010-preto","status":"Disponível","featured":false,
-    "make":"Ford","model":"Fiesta","version":"Flex Completo","name":"Ford Fiesta Flex 2010 Preto",
-    "year":2010,"model_year":2010,"price":19900,"price_display":"R$ 19.900","km":null,"km_display":"Consultar",
-    "color":"Preta","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.0 Flex",
-    "doors":4,"location":"Praia Grande/SP",
-    "headline":"Completo, sem leilão e documento ok",
-    "description":"Ford Fiesta Flex 2010 preto, completo, sem leilão e com documentação ok. Uma opção acessível para quem procura carro econômico, barato de manter e bom para o dia a dia.",
-    "highlights":["Completo","Sem leilão","Documento ok","Fipe aprox. R$ 23 mil","Preço R$ 19.900","Aceitamos proposta"],
-    "images":["assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-01.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-02.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-03.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-04.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-05.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-06.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-07.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-08.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-09.png"],
-    "cover":"assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Ford Fiesta Flex 2010 Preto - R$ 19.900."
-  },
-  {
-    "id":"mini-cooper-2010-azul","slug":"mini-cooper-sca-2010-azul","status":"Disponível","featured":true,
-    "make":"Mini","model":"Cooper","version":"SCA","name":"Mini Cooper SCA 2010 Azul",
-    "year":2009,"model_year":2010,"price":101900,"price_display":"R$ 101.900","km":77931,"km_display":"77.931 km",
-    "color":"Azul","fuel":"Gasolina","transmission":"Automático","body":"Compacto premium","category":"Importado","motor":"1.6 Gasolina",
-    "doors":2,"location":"São Paulo/SP",
-    "headline":"Importado premium, exclusivo e cheio de personalidade",
-    "description":"Mini Cooper SCA 2009/2010 azul, importado, compacto premium e diferenciado. Carro com estilo, presença e proposta única para quem quer fugir do comum.",
-    "highlights":["Importado","Compacto premium","Câmbio automático","Cor azul","Visual exclusivo","Financiamos"],
-    "images":["assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-01.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-02.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-03.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-04.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-05.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-06.png"],
-    "cover":"assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Mini Cooper SCA 2010 Azul - R$ 101.900."
-  },
-  {
-    "id":"fiorino-2018-branca","slug":"fiat-fiorino-hard-working-2018","status":"Disponível","featured":true,
-    "make":"Fiat","model":"Fiorino","version":"HD WK E / Hard Working","name":"Fiat Fiorino Hard Working 2018",
-    "year":2017,"model_year":2018,"price":74900,"price_display":"R$ 74.900","km":217598,"km_display":"217.598 km",
-    "color":"Branca","fuel":"Flex","transmission":"Manual","body":"Furgão","category":"Utilitário","motor":"1.4 Flex",
-    "doors":2,"location":"Belo Horizonte/MG",
-    "headline":"Utilitário pronto para trabalho e entregas",
-    "description":"Fiat Fiorino Hard Working 2017/2018 branca, utilitário ideal para entregas, logística, comércio, assistência técnica e profissionais autônomos. Pronta para gerar renda.",
-    "highlights":["Utilitário de carga","Motor 1.4 Flex","Câmbio manual","Ideal para entregas","Pronta para trabalho","Financiamos"],
-    "images":["assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-01.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-02.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-03.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-04.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-05.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-06.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-07.png"],
-    "cover":"assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Fiat Fiorino Hard Working 2018 - R$ 74.900."
-  },
-  {
-    "id":"gol-2021-branco","slug":"volkswagen-gol-1-0-2021","status":"Disponível","featured":false,
-    "make":"Volkswagen","model":"Gol","version":"1.0L MC4","name":"Volkswagen Gol 1.0 2021",
-    "year":2020,"model_year":2021,"price":48900,"price_display":"R$ 48.900","km":null,"km_display":"Consultar",
-    "color":"Branca","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.0 Flex",
-    "doors":4,"location":"Canoas/RS",
-    "headline":"Econômico, confiável e fácil de manter",
-    "description":"Volkswagen Gol 1.0 2020/2021 branco, hatch econômico, prático e com ótima liquidez. Excelente opção para primeiro carro, trabalho, aplicativo ou uso diário.",
-    "highlights":["Motor 1.0 Flex","Hatch compacto","Manutenção acessível","Boa liquidez","Ideal para o dia a dia","Financiamos"],
-    "images":["assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-01.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-02.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-03.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-04.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-05.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-06.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-07.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-08.png"],
-    "cover":"assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-01.png",
-    "whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Volkswagen Gol 1.0 2021 - R$ 48.900."
-  }
+  {"id":"nivus-2021-cinza","slug":"volkswagen-nivus-highline-tsi-2021","status":"Disponível","featured":true,"make":"Volkswagen","model":"Nivus","version":"Highline TSI AD","name":"Volkswagen Nivus Highline TSI 2021","year":2021,"model_year":2021,"price":113900,"price_display":"R$ 113.900","km":47551,"km_display":"47.551 km","color":"Cinza","fuel":"Flex","transmission":"Automático","body":"SUV Coupé","category":"SUV","motor":"1.0 TSI Flex","doors":4,"location":"São Paulo/SP","headline":"SUV coupé automático, moderno e completo","description":"Nivus Highline TSI 2021 cinza, automático, com motor TSI Flex, painel digital, multimídia e excelente dirigibilidade. Uma opção moderna, confortável e com ótima liquidez para família, trabalho e uso diário.","highlights":["Motor TSI Flex","Câmbio automático","Painel digital","Multimídia","Porta-malas espaçoso","Financiamos"],"images":["assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-01.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-02.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-03.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-04.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-05.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-06.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-07.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-08.png","assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-09.png"],"cover":"assets/cars/volkswagen-nivus-highline-tsi-2021/volkswagen-nivus-highline-tsi-2021-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Volkswagen Nivus Highline TSI 2021 - R$ 113.900."},
+  {"id":"onix-lt-2013-prata","slug":"chevrolet-onix-lt-1-0-2013","status":"Disponível","featured":false,"make":"Chevrolet","model":"Onix","version":"LT 1.0MT","name":"Chevrolet Onix LT 1.0 2013","year":2013,"model_year":2013,"price":48900,"price_display":"R$ 48.900","km":null,"km_display":"Consultar","color":"Prata","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.0 Flex","doors":4,"location":"Taubaté/SP","headline":"Hatch econômico e muito procurado","description":"Onix LT 1.0 2013 prata, hatch compacto com câmbio manual, bom custo-benefício e excelente aceitação no mercado. Ideal para uso diário, trabalho, faculdade e primeiro carro.","highlights":["Motor 1.0 Flex","Câmbio manual","Hatch compacto","Boa revenda","Manutenção acessível","Financiamos"],"images":["assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-01.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-02.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-03.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-04.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-05.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-06.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-07.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-08.png","assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-09.png"],"cover":"assets/cars/chevrolet-onix-lt-1-0-2013/chevrolet-onix-lt-1-0-2013-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Chevrolet Onix LT 1.0 2013 - R$ 48.900."},
+  {"id":"fiesta-2015-branco","slug":"ford-fiesta-hatch-1-5-s-2015-branco","status":"Disponível","featured":true,"make":"Ford","model":"Fiesta","version":"HA 1.5L S","name":"Ford Fiesta Hatch 1.5 S 2015","year":2014,"model_year":2015,"price":48900,"price_display":"R$ 48.900","km":123910,"km_display":"123.910 km","color":"Branca","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.5 Flex 4 cilindros 16V","doors":4,"location":"Cotia/SP","headline":"Hatch 1.5 econômico, confiável e pronto para rodar","description":"Ford Fiesta Hatch 1.5 S 2014/2015 branco, motor 1.5 Flex 4 cilindros, câmbio manual e boa dirigibilidade. Ótima opção para quem busca custo-benefício, economia e manutenção acessível.","highlights":["Motor 1.5 Flex","4 cilindros 16V","Câmbio manual","Direção elétrica","Rodas de liga leve","Financiamos"],"images":["assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-01.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-02.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-03.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-04.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-05.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-06.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-07.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-08.png","assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-09.png"],"cover":"assets/cars/ford-fiesta-hatch-1-5-s-2015-branco/ford-fiesta-hatch-1-5-s-2015-branco-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Ford Fiesta Hatch 1.5 S 2015 - R$ 48.900."},
+  {"id":"sonata-2012-prata","slug":"hyundai-sonata-gls-2012","status":"Disponível","featured":true,"make":"Hyundai","model":"Sonata","version":"GLS 2.4","name":"Hyundai Sonata GLS 2012","year":2011,"model_year":2012,"price":67900,"price_display":"R$ 67.900","km":null,"km_display":"Consultar","color":"Prata","fuel":"Gasolina","transmission":"Automático","body":"Sedan","category":"Sedan","motor":"2.4 16V Gasolina","doors":4,"location":"Belém/PA","headline":"Sedan premium, automático e com presença","description":"Hyundai Sonata GLS 2011/2012 prata, sedan grande com motor 2.4 gasolina, câmbio automático, acabamento superior e visual imponente. Ideal para quem busca conforto, espaço e presença.","highlights":["Motor 2.4","Câmbio automático","Sedan premium","Teto solar","Interior amplo","Financiamos"],"images":["assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-01.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-02.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-03.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-04.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-05.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-06.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-07.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-08.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-09.png","assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-10.png"],"cover":"assets/cars/hyundai-sonata-gls-2012/hyundai-sonata-gls-2012-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Hyundai Sonata GLS 2012 - R$ 67.900."},
+  {"id":"fiesta-2010-preto","slug":"ford-fiesta-flex-2010-preto","status":"Disponível","featured":false,"make":"Ford","model":"Fiesta","version":"Flex Completo","name":"Ford Fiesta Flex 2010 Preto","year":2010,"model_year":2010,"price":19900,"price_display":"R$ 19.900","km":null,"km_display":"Consultar","color":"Preta","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.0 Flex","doors":4,"location":"Praia Grande/SP","headline":"Completo, sem leilão e documento ok","description":"Ford Fiesta Flex 2010 preto, completo, sem leilão e com documentação ok. Uma opção acessível para quem procura carro econômico, barato de manter e bom para o dia a dia.","highlights":["Completo","Sem leilão","Documento ok","Fipe aprox. R$ 23 mil","Preço R$ 19.900","Aceitamos proposta"],"images":["assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-01.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-02.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-03.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-04.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-05.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-06.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-07.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-08.png","assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-09.png"],"cover":"assets/cars/ford-fiesta-flex-2010-preto/ford-fiesta-flex-2010-preto-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Ford Fiesta Flex 2010 Preto - R$ 19.900."},
+  {"id":"mini-cooper-2010-azul","slug":"mini-cooper-sca-2010-azul","status":"Disponível","featured":true,"make":"Mini","model":"Cooper","version":"SCA","name":"Mini Cooper SCA 2010 Azul","year":2009,"model_year":2010,"price":101900,"price_display":"R$ 101.900","km":77931,"km_display":"77.931 km","color":"Azul","fuel":"Gasolina","transmission":"Automático","body":"Compacto premium","category":"Importado","motor":"1.6 Gasolina","doors":2,"location":"São Paulo/SP","headline":"Importado premium, exclusivo e cheio de personalidade","description":"Mini Cooper SCA 2009/2010 azul, importado, compacto premium e diferenciado. Carro com estilo, presença e proposta única para quem quer fugir do comum.","highlights":["Importado","Compacto premium","Câmbio automático","Cor azul","Visual exclusivo","Financiamos"],"images":["assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-01.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-02.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-03.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-04.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-05.png","assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-06.png"],"cover":"assets/cars/mini-cooper-sca-2010-azul/mini-cooper-sca-2010-azul-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Mini Cooper SCA 2010 Azul - R$ 101.900."},
+  {"id":"fiorino-2018-branca","slug":"fiat-fiorino-hard-working-2018","status":"Disponível","featured":true,"make":"Fiat","model":"Fiorino","version":"HD WK E / Hard Working","name":"Fiat Fiorino Hard Working 2018","year":2017,"model_year":2018,"price":74900,"price_display":"R$ 74.900","km":217598,"km_display":"217.598 km","color":"Branca","fuel":"Flex","transmission":"Manual","body":"Furgão","category":"Utilitário","motor":"1.4 Flex","doors":2,"location":"Belo Horizonte/MG","headline":"Utilitário pronto para trabalho e entregas","description":"Fiat Fiorino Hard Working 2017/2018 branca, utilitário ideal para entregas, logística, comércio, assistência técnica e profissionais autônomos. Pronta para gerar renda.","highlights":["Utilitário de carga","Motor 1.4 Flex","Câmbio manual","Ideal para entregas","Pronta para trabalho","Financiamos"],"images":["assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-01.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-02.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-03.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-04.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-05.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-06.png","assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-07.png"],"cover":"assets/cars/fiat-fiorino-hard-working-2018/fiat-fiorino-hard-working-2018-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Fiat Fiorino Hard Working 2018 - R$ 74.900."},
+  {"id":"gol-2021-branco","slug":"volkswagen-gol-1-0-2021","status":"Disponível","featured":false,"make":"Volkswagen","model":"Gol","version":"1.0L MC4","name":"Volkswagen Gol 1.0 2021","year":2020,"model_year":2021,"price":48900,"price_display":"R$ 48.900","km":null,"km_display":"Consultar","color":"Branca","fuel":"Flex","transmission":"Manual","body":"Hatch","category":"Hatch","motor":"1.0 Flex","doors":4,"location":"Canoas/RS","headline":"Econômico, confiável e fácil de manter","description":"Volkswagen Gol 1.0 2020/2021 branco, hatch econômico, prático e com ótima liquidez. Excelente opção para primeiro carro, trabalho, aplicativo ou uso diário.","highlights":["Motor 1.0 Flex","Hatch compacto","Manutenção acessível","Boa liquidez","Ideal para o dia a dia","Financiamos"],"images":["assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-01.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-02.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-03.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-04.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-05.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-06.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-07.png","assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-08.png"],"cover":"assets/cars/volkswagen-gol-1-0-2021/volkswagen-gol-1-0-2021-01.png","whatsapp_text":"Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o Volkswagen Gol 1.0 2021 - R$ 48.900."}
 ];
 
 const WA = '5521979112975';
-const WA_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
-const FALLBACK ="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23071A33'/%3E%3Cpath d='M240 310Q250 268 294 260L352 254 388 208 452 208 488 254 546 260Q590 268 600 310L624 310 624 338 176 338 176 310Z' fill='%23C99A3D' opacity='.22'/%3E%3Ccircle cx='290' cy='344' r='28' fill='none' stroke='%23C99A3D' stroke-width='5' opacity='.28'/%3E%3Ccircle cx='550' cy='344' r='28' fill='none' stroke='%23C99A3D' stroke-width='5' opacity='.28'/%3E%3Ctext x='400' y='415' text-anchor='middle' fill='%23B8C0CC' font-family='Arial,sans-serif' font-size='15'%3EFoto n%C3%A3o dispon%C3%ADvel%3C/text%3E%3C/svg%3E";
+const FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f0f4f8'/%3E%3Cpath d='M240 310Q250 268 294 260L352 254 388 208 452 208 488 254 546 260Q590 268 600 310L624 310 624 338 176 338 176 310Z' fill='%23c5cdd8'/%3E%3Ccircle cx='290' cy='344' r='28' fill='none' stroke='%23c5cdd8' stroke-width='5'/%3E%3Ccircle cx='550' cy='344' r='28' fill='none' stroke='%23c5cdd8' stroke-width='5'/%3E%3Ctext x='400' y='415' text-anchor='middle' fill='%239ca3af' font-family='Arial,sans-serif' font-size='15'%3EFoto n%C3%A3o dispon%C3%ADvel%3C/text%3E%3C/svg%3E";
 
-let currentVehicle = null;
-let currentImgIdx = 0;
-let lastFocused = null;
+let currentVehicle = null, currentImgIdx = 0, lastFocused = null;
+let lbVehicle = null, lbIdx = 0, lbFromModal = false;
 
 function imgFallback(img) { if (img.src !== FALLBACK) { img.src = FALLBACK; img.classList.add('img-fallback'); } }
 window.imgFallback = imgFallback;
 
 const el = id => document.getElementById(id);
-const normalize = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const normalize = s => String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 const waLink = text => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
 
-function unique(key) {
-  return [...new Set(VEHICLES.map(v => v[key]).filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b), 'pt-BR'));
-}
-function fillSelect(id, values) {
-  const s = el(id);
-  values.forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; s.appendChild(o); });
-}
+function unique(key) { return [...new Set(VEHICLES.map(v=>v[key]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'pt-BR')); }
+function fillSelect(id, vals) { const s=el(id); vals.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; s.appendChild(o); }); }
 
 function getFiltered() {
-  const q = normalize(el('search').value);
-  const make = el('make').value, category = el('category').value;
-  const transmission = el('transmission').value, fuel = el('fuel').value, color = el('color').value;
-  const minPrice = Number(el('minPrice').value) || 0;
-  const maxPrice = Number(el('maxPrice').value) || Infinity;
-  const maxKmVal = el('maxKm').value.trim();
-  const maxKm = maxKmVal ? Number(maxKmVal) : null;
-  const minYear = Number(el('minYear').value) || 0;
-
-  let list = VEHICLES.filter(v => {
-    const blob = normalize([v.name, v.make, v.model, v.version, v.category, v.motor, v.color, v.fuel, v.transmission, v.description].join(' '));
-    if (q && !blob.includes(q)) return false;
-    if (make && v.make !== make) return false;
-    if (category && v.category !== category) return false;
-    if (transmission && v.transmission !== transmission) return false;
-    if (fuel && v.fuel !== fuel) return false;
-    if (color && v.color !== color) return false;
-    if (v.price < minPrice || v.price > maxPrice) return false;
-    if (maxKm !== null && (v.km === null || v.km === undefined || v.km > maxKm)) return false;
-    if (v.model_year < minYear) return false;
+  const q=normalize(el('search').value), make=el('make').value, category=el('category').value;
+  const transmission=el('transmission').value, fuel=el('fuel').value, color=el('color').value;
+  const minPrice=Number(el('minPrice').value)||0, maxPrice=Number(el('maxPrice').value)||Infinity;
+  const maxKmVal=el('maxKm').value.trim(), maxKm=maxKmVal?Number(maxKmVal):null;
+  const minYear=Number(el('minYear').value)||0;
+  let list=VEHICLES.filter(v=>{
+    const blob=normalize([v.name,v.make,v.model,v.version,v.category,v.motor,v.color,v.fuel,v.transmission,v.description].join(' '));
+    if(q&&!blob.includes(q)) return false;
+    if(make&&v.make!==make) return false;
+    if(category&&v.category!==category) return false;
+    if(transmission&&v.transmission!==transmission) return false;
+    if(fuel&&v.fuel!==fuel) return false;
+    if(color&&v.color!==color) return false;
+    if(v.price<minPrice||v.price>maxPrice) return false;
+    if(maxKm!==null&&(v.km===null||v.km===undefined||v.km>maxKm)) return false;
+    if(v.model_year<minYear) return false;
     return true;
   });
-
-  const sort = el('sort').value;
-  list.sort((a, b) => {
-    if (sort === 'priceAsc') return a.price - b.price;
-    if (sort === 'priceDesc') return b.price - a.price;
-    if (sort === 'yearDesc') return b.model_year - a.model_year;
-    if (sort === 'kmAsc') return (a.km ?? 9999999) - (b.km ?? 9999999);
-    return (Number(b.featured) - Number(a.featured)) || (b.model_year - a.model_year);
-  });
+  const sort=el('sort').value;
+  list.sort((a,b)=>sort==='priceAsc'?a.price-b.price:sort==='priceDesc'?b.price-a.price:sort==='yearDesc'?b.model_year-a.model_year:sort==='kmAsc'?(a.km??9999999)-(b.km??9999999):(Number(b.featured)-Number(a.featured))||(b.model_year-a.model_year));
   return list;
 }
 
+function chipIcon(type) {
+  const icons = {
+    year: `<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor"><path d="M4 1v1H2a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1V3a1 1 0 00-1-1h-2V1h-1v1H5V1H4zm0 3h8v1H4V4zm-2 3h12v6H2V7z"/></svg>`,
+    km: `<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8zm8-3.5a.5.5 0 01.5.5v3.793l2.146 2.147a.5.5 0 01-.707.707l-2.5-2.5A.5.5 0 017.5 9V5a.5.5 0 01.5-.5z"/></svg>`,
+    gear: `<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor"><path d="M8 4.754a3.246 3.246 0 100 6.492 3.246 3.246 0 000-6.492zM5.754 8a2.246 2.246 0 114.492 0 2.246 2.246 0 01-4.492 0z"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 01-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 01-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 01.52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 011.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 011.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 01.52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 01-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 01-1.255-.52l-.094-.319z"/></svg>`,
+    fuel: `<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor"><path d="M3 2a1 1 0 011-1h8a1 1 0 011 1v13h1.5a.5.5 0 010 1h-13a.5.5 0 010-1H3V2zm1 13h8V2H4v13zm2-8.5a.5.5 0 01.5-.5h3a.5.5 0 010 1h-3a.5.5 0 01-.5-.5z"/></svg>`
+  };
+  return icons[type]||'';
+}
+
 function card(v) {
-  const img = v.cover || '';
-  const msg = v.whatsapp_text || `Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o ${v.name} - ${v.price_display}.`;
-  return `<article class="card" role="listitem" data-id="${v.id}">
-    <div class="cover-wrap">
-      <img class="cover" src="${img}" alt="${v.name}, ${v.color}, ${v.model_year}" loading="lazy" onerror="imgFallback(this)" onclick="openLightbox('${v.id}',0)" title="Clique para ver em tela cheia">
-      <span class="badge">${v.category}</span>
-      ${v.featured ? '<span class="badge-featured">Destaque</span>' : ''}
-      <span class="price">${v.price_display}</span>
+  const img = v.cover||'';
+  const msg = v.whatsapp_text||`Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o ${v.name} - ${v.price_display}.`;
+  return `<article class="vcard" role="listitem">
+    <div class="vcard-img-wrap">
+      <img class="vcard-img" src="${img}" alt="${v.name}, ${v.color}, ${v.model_year}" loading="lazy" onerror="imgFallback(this)" onclick="openLightbox('${v.id}',0)" title="Clique para ver em tela cheia">
+      <span class="vcard-badge">${v.category}</span>
+      ${v.featured?'<span class="vcard-featured">Destaque</span>':''}
+      <div class="vcard-price">${v.price_display}</div>
     </div>
-    <div class="card-body">
-      <h3>${v.name}</h3>
-      <p class="headline">${v.headline}</p>
-      <div class="specs">
-        <div class="spec">Ano<b>${v.year}/${v.model_year}</b></div>
-        <div class="spec">KM<b>${v.km_display}</b></div>
-        <div class="spec">Câmbio<b>${v.transmission}</b></div>
-        <div class="spec">Motor<b>${v.motor}</b></div>
+    <div class="vcard-body">
+      <div class="vcard-name">${v.name}</div>
+      <div class="vcard-headline">${v.headline}</div>
+      <div class="vcard-chips">
+        <span class="chip">${chipIcon('year')}${v.year}/${v.model_year}</span>
+        <span class="chip">${chipIcon('km')}${v.km_display}</span>
+        <span class="chip">${chipIcon('gear')}${v.transmission}</span>
+        <span class="chip">${chipIcon('fuel')}${v.fuel}</span>
       </div>
-      <div class="card-actions">
-        <button class="btn ghost" onclick="openVehicle('${v.id}')">Ver detalhes</button>
-        <a class="btn gold" href="${waLink(msg)}" target="_blank" rel="noopener noreferrer" aria-label="Perguntar sobre ${v.name} no WhatsApp">${WA_SVG}WhatsApp</a>
+      <div class="vcard-location">
+        <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 002 6c0 4.314 6 10 6 10zm0-7a3 3 0 110-6 3 3 0 010 6z"/></svg>
+        ${v.location}
       </div>
+    </div>
+    <div class="vcard-actions">
+      <button class="btn btn-outline" onclick="openVehicle('${v.id}')" style="border-radius:8px">Ver detalhes</button>
+      <a class="btn btn-wa" href="${waLink(msg)}" target="_blank" rel="noopener noreferrer" style="border-radius:8px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
     </div>
   </article>`;
 }
 
 function render() {
-  const list = getFiltered();
-  el('vehicleGrid').innerHTML = list.map(card).join('');
-  el('resultCount').textContent = list.length;
-  el('noResults').classList.toggle('show', list.length === 0);
+  const list=getFiltered();
+  el('vehicleGrid').innerHTML=list.map(card).join('');
+  el('resultCount').textContent=list.length;
+  el('noResults').classList.toggle('show',list.length===0);
 }
 
 function setGalleryImg(idx) {
-  if (!currentVehicle) return;
-  const imgs = currentVehicle.images || [];
-  if (!imgs.length) return;
-  currentImgIdx = Math.max(0, Math.min(idx, imgs.length - 1));
-  const mainEl = el('modalMain');
-  mainEl.src = imgs[currentImgIdx];
-  mainEl.alt = `${currentVehicle.name} — foto ${currentImgIdx + 1} de ${imgs.length}`;
-  el('modalThumbs').querySelectorAll('.thumb').forEach((t, i) => t.classList.toggle('active', i === currentImgIdx));
+  if(!currentVehicle) return;
+  const imgs=currentVehicle.images||[];
+  if(!imgs.length) return;
+  currentImgIdx=Math.max(0,Math.min(idx,imgs.length-1));
+  el('modalMain').src=imgs[currentImgIdx];
+  el('modalMain').alt=`${currentVehicle.name} — foto ${currentImgIdx+1} de ${imgs.length}`;
+  el('modalThumbs').querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===currentImgIdx));
 }
-window.setGalleryImg = setGalleryImg;
+window.setGalleryImg=setGalleryImg;
 
 function openVehicle(id) {
-  const v = VEHICLES.find(x => x.id === id);
-  if (!v) return;
-  lastFocused = document.activeElement;
-  currentVehicle = v;
-  currentImgIdx = 0;
-
-  el('modalTitle').textContent = v.name;
-  el('modalSubtitle').textContent = `${v.price_display} · ${v.km_display} · ${v.color} · ${v.location}`;
-
-  const firstImg = (v.images && v.images[0]) || v.cover || '';
-  el('modalMain').src = firstImg;
-  el('modalMain').alt = `${v.name} — foto 1`;
-
-  el('modalDescription').textContent = v.description;
-
-  const msg = v.whatsapp_text || `Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o ${v.name} - ${v.price_display}.`;
-  el('modalWhatsapp').href = waLink(msg);
-
-  el('modalSpecs').innerHTML = [
-    ['Ano', `${v.year}/${v.model_year}`], ['Preço', v.price_display],
-    ['KM', v.km_display], ['Motor', v.motor],
-    ['Câmbio', v.transmission], ['Combustível', v.fuel],
-    ['Cor', v.color], ['Local', v.location]
-  ].map(([a, b]) => `<div class="spec">${a}<b>${b}</b></div>`).join('');
-
-  el('modalHighlights').innerHTML = (v.highlights || []).map(h => `<span class="highlight-tag">${h}</span>`).join('');
-
-  el('modalThumbs').innerHTML = (v.images || []).map((src, i) =>
-    `<img class="thumb${i === 0 ? ' active' : ''}" src="${src}" alt="${v.name} — foto ${i + 1}" loading="lazy" onerror="imgFallback(this)" onclick="setGalleryImg(${i})">`
-  ).join('');
-
+  const v=VEHICLES.find(x=>x.id===id); if(!v) return;
+  lastFocused=document.activeElement;
+  currentVehicle=v; currentImgIdx=0;
+  el('modalTitle').textContent=v.name;
+  el('modalSubtitle').textContent=`${v.color} · ${v.transmission} · ${v.motor}`;
+  el('modalPrice').textContent=v.price_display;
+  el('modalKmLoc').textContent=`${v.km_display} · ${v.location}`;
+  el('modalMain').src=(v.images&&v.images[0])||v.cover||'';
+  el('modalMain').alt=`${v.name} — foto 1`;
+  el('modalDescription').textContent=v.description;
+  const msg=v.whatsapp_text||`Olá! Vim pelo site da Vitrine Auto Leste e quero saber mais sobre o ${v.name} - ${v.price_display}.`;
+  el('modalWhatsapp').href=waLink(msg);
+  el('modalSpecs').innerHTML=[['Ano',`${v.year}/${v.model_year}`],['KM',v.km_display],['Motor',v.motor],['Câmbio',v.transmission],['Combustível',v.fuel],['Cor',v.color],['Carroceria',v.body],['Local',v.location]].map(([a,b])=>`<div class="mspec"><div class="mspec-label">${a}</div><div class="mspec-value">${b}</div></div>`).join('');
+  el('modalHighlights').innerHTML=(v.highlights||[]).map(h=>`<span class="htag">${h}</span>`).join('');
+  el('modalThumbs').innerHTML=(v.images||[]).map((src,i)=>`<img class="thumb${i===0?' active':''}" src="${src}" alt="${v.name} — foto ${i+1}" loading="lazy" onerror="imgFallback(this)" onclick="setGalleryImg(${i})">`).join('');
   el('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  if (v.slug) history.pushState({ vehicleId: id }, '', `#${v.slug}`);
-  setTimeout(() => el('closeModal').focus(), 50);
+  document.body.style.overflow='hidden';
+  if(v.slug) history.pushState({vehicleId:id},'',`#${v.slug}`);
+  setTimeout(()=>el('closeModal').focus(),50);
 }
-window.openVehicle = openVehicle;
+window.openVehicle=openVehicle;
 
 function closeModal() {
   el('modal').classList.remove('open');
-  document.body.style.overflow = '';
-  currentVehicle = null;
-  history.pushState({}, '', location.pathname + location.search);
-  if (lastFocused) lastFocused.focus();
+  document.body.style.overflow='';
+  currentVehicle=null;
+  history.pushState({},'',location.pathname+location.search);
+  if(lastFocused) lastFocused.focus();
 }
 
-function clearAll() {
-  ['search', 'make', 'category', 'transmission', 'fuel', 'minPrice', 'maxPrice', 'maxKm', 'minYear', 'color'].forEach(id => el(id).value = '');
-  el('sort').value = 'featured';
-  render();
-}
-window.clearAll = clearAll;
-
-let lbVehicle = null, lbIdx = 0, lbFromModal = false;
-
-function openLightbox(vehicleId, startIdx) {
-  const v = VEHICLES.find(x => x.id === vehicleId);
-  if (!v || !v.images || !v.images.length) return;
-  lbFromModal = el('modal').classList.contains('open');
-  lbVehicle = v;
-  lbIdx = Math.max(0, Math.min(startIdx, v.images.length - 1));
-  _refreshLightbox();
+function openLightbox(vehicleId,startIdx) {
+  const v=VEHICLES.find(x=>x.id===vehicleId);
+  if(!v||!v.images||!v.images.length) return;
+  lbFromModal=el('modal').classList.contains('open');
+  lbVehicle=v; lbIdx=Math.max(0,Math.min(startIdx,v.images.length-1));
+  refreshLb();
   el('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  el('lightboxClose').focus();
+  document.body.style.overflow='hidden';
+  el('lbClose').focus();
 }
-window.openLightbox = openLightbox;
+window.openLightbox=openLightbox;
 
-function openLightboxFromModal() {
-  if (!currentVehicle) return;
-  openLightbox(currentVehicle.id, currentImgIdx);
-}
-window.openLightboxFromModal = openLightboxFromModal;
+function openLightboxFromModal() { if(currentVehicle) openLightbox(currentVehicle.id,currentImgIdx); }
+window.openLightboxFromModal=openLightboxFromModal;
 
-function _refreshLightbox() {
-  const imgs = lbVehicle.images;
-  el('lightboxImg').src = imgs[lbIdx];
-  el('lightboxImg').alt = `${lbVehicle.name} — foto ${lbIdx + 1} de ${imgs.length}`;
-  el('lightboxTitle').textContent = `${lbVehicle.name} · ${lbVehicle.price_display}`;
-  el('lightboxCounter').textContent = `${lbIdx + 1} / ${imgs.length}`;
-  el('lightboxPrev').style.display = imgs.length > 1 ? 'flex' : 'none';
-  el('lightboxNext').style.display = imgs.length > 1 ? 'flex' : 'none';
+function refreshLb() {
+  const imgs=lbVehicle.images;
+  el('lbImg').src=imgs[lbIdx];
+  el('lbImg').alt=`${lbVehicle.name} — foto ${lbIdx+1} de ${imgs.length}`;
+  el('lbTitle').textContent=`${lbVehicle.name} · ${lbVehicle.price_display}`;
+  el('lbCounter').textContent=`${lbIdx+1} / ${imgs.length}`;
+  el('lbPrev').style.display=imgs.length>1?'flex':'none';
+  el('lbNext').style.display=imgs.length>1?'flex':'none';
 }
 
-function lbNav(dir) {
-  if (!lbVehicle) return;
-  lbIdx = (lbIdx + dir + lbVehicle.images.length) % lbVehicle.images.length;
-  _refreshLightbox();
-}
+function lbNav(dir) { if(!lbVehicle) return; lbIdx=(lbIdx+dir+lbVehicle.images.length)%lbVehicle.images.length; refreshLb(); }
 
 function closeLightbox() {
   el('lightbox').classList.remove('open');
-  if (!lbFromModal) document.body.style.overflow = '';
-  lbVehicle = null;
+  if(!lbFromModal) document.body.style.overflow='';
+  lbVehicle=null;
 }
 
-function closeMobileMenu() {
-  el('mobileNav').classList.remove('open');
-  el('hamburger').setAttribute('aria-expanded', 'false');
+function clearAll() {
+  ['search','make','category','transmission','fuel','minPrice','maxPrice','maxKm','minYear','color'].forEach(id=>el(id).value='');
+  el('sort').value='featured'; render();
 }
-window.closeMobileMenu = closeMobileMenu;
+window.clearAll=clearAll;
 
-function injectVehicleSchema() {
-  const schema = {
-    "@context": "https://schema.org", "@type": "ItemList",
-    "name": "Veículos disponíveis — Vitrine Auto Leste",
-    "itemListElement": VEHICLES.map((v, i) => ({
-      "@type": "ListItem", "position": i + 1,
-      "item": {
-        "@type": "Vehicle", "name": v.name, "description": v.description,
-        "color": v.color, "fuelType": v.fuel, "vehicleTransmission": v.transmission,
-        "vehicleModelDate": String(v.model_year),
-        "offers": { "@type": "Offer", "price": v.price, "priceCurrency": "BRL", "availability": "https://schema.org/InStock" },
-        ...(v.km ? { "mileageFromOdometer": { "@type": "QuantitativeValue", "value": v.km, "unitCode": "KMT" } } : {})
-      }
-    }))
-  };
-  const s = document.createElement('script');
-  s.type = 'application/ld+json';
-  s.textContent = JSON.stringify(schema);
-  document.head.appendChild(s);
-}
+function closeMobileMenu() { el('mobileNav').classList.remove('open'); el('hamburger').setAttribute('aria-expanded','false'); }
+window.closeMobileMenu=closeMobileMenu;
 
 function init() {
-  fillSelect('make', unique('make'));
-  fillSelect('category', unique('category'));
-  fillSelect('transmission', unique('transmission'));
-  fillSelect('fuel', unique('fuel'));
-  fillSelect('color', unique('color'));
+  fillSelect('make',unique('make')); fillSelect('category',unique('category'));
+  fillSelect('transmission',unique('transmission')); fillSelect('fuel',unique('fuel')); fillSelect('color',unique('color'));
+  const lv=el('leadVehicle');
+  VEHICLES.forEach(v=>{ const o=document.createElement('option'); o.value=v.name; o.textContent=`${v.name} — ${v.price_display}`; lv.appendChild(o); });
 
-  const lv = el('leadVehicle');
-  VEHICLES.forEach(v => { const o = document.createElement('option'); o.value = v.name; o.textContent = `${v.name} — ${v.price_display}`; lv.appendChild(o); });
+  ['search','make','category','transmission','fuel','minPrice','maxPrice','maxKm','minYear','color','sort'].forEach(id=>el(id).addEventListener('input',render));
+  el('applyFilters').addEventListener('click',render);
+  el('applyFilters2').addEventListener('click',render);
+  el('clearFilters').addEventListener('click',clearAll);
 
-  const featured = VEHICLES.find(v => v.featured) || VEHICLES[0];
-  el('heroCover').src = featured.cover || '';
-  el('heroTitle').textContent = `${featured.name} · ${featured.price_display}`;
+  el('advToggle').addEventListener('click',()=>{ const af=el('advFilters'); af.classList.toggle('open'); el('advToggle').textContent=af.classList.contains('open')?'− Filtros':'+ Filtros'; });
 
-  ['search','make','category','transmission','fuel','minPrice','maxPrice','maxKm','minYear','color','sort'].forEach(id => el(id).addEventListener('input', render));
-  el('applyFilters').addEventListener('click', render);
-  el('clearFilters').addEventListener('click', clearAll);
+  el('closeModal').addEventListener('click',closeModal);
+  el('modal').addEventListener('click',e=>{ if(e.target===el('modal')) closeModal(); });
+  el('galleryPrev').addEventListener('click',()=>setGalleryImg(currentImgIdx-1));
+  el('galleryNext').addEventListener('click',()=>setGalleryImg(currentImgIdx+1));
+  el('modalLead').addEventListener('click',()=>{ el('leadVehicle').value=el('modalTitle').textContent; closeModal(); location.hash='financiamento'; });
 
-  el('closeModal').addEventListener('click', closeModal);
-  el('modal').addEventListener('click', e => { if (e.target === el('modal')) closeModal(); });
-  el('galleryPrev').addEventListener('click', () => setGalleryImg(currentImgIdx - 1));
-  el('galleryNext').addEventListener('click', () => setGalleryImg(currentImgIdx + 1));
-  el('modalLead').addEventListener('click', () => {
-    const name = el('modalTitle').textContent;
-    el('leadVehicle').value = name;
-    closeModal();
-    location.hash = 'financiamento';
+  el('lbClose').addEventListener('click',closeLightbox);
+  el('lbPrev').addEventListener('click',()=>lbNav(-1));
+  el('lbNext').addEventListener('click',()=>lbNav(1));
+  el('lightbox').addEventListener('click',e=>{ if(e.target===el('lightbox')||e.target.classList.contains('lb-img-wrap')) closeLightbox(); });
+
+  el('hamburger').addEventListener('click',()=>{ el('mobileNav').classList.add('open'); el('hamburger').setAttribute('aria-expanded','true'); el('mobileNavClose').focus(); });
+  el('mobileNavClose').addEventListener('click',closeMobileMenu);
+
+  document.addEventListener('keydown',e=>{
+    if(el('lightbox').classList.contains('open')){ if(e.key==='Escape'){closeLightbox();return;} if(e.key==='ArrowLeft'){lbNav(-1);return;} if(e.key==='ArrowRight'){lbNav(1);return;} }
+    if(e.key==='Escape'){ if(el('modal').classList.contains('open')) closeModal(); if(el('mobileNav').classList.contains('open')) closeMobileMenu(); }
+    if(el('modal').classList.contains('open')){ if(e.key==='ArrowLeft') setGalleryImg(currentImgIdx-1); if(e.key==='ArrowRight') setGalleryImg(currentImgIdx+1); }
   });
 
-  el('lightboxClose').addEventListener('click', closeLightbox);
-  el('lightboxPrev').addEventListener('click', () => lbNav(-1));
-  el('lightboxNext').addEventListener('click', () => lbNav(1));
-  el('lightbox').addEventListener('click', e => { if (e.target === el('lightbox') || e.target === el('lightboxImg').parentElement) closeLightbox(); });
-
-  document.addEventListener('keydown', e => {
-    if (el('lightbox').classList.contains('open')) {
-      if (e.key === 'Escape') { closeLightbox(); return; }
-      if (e.key === 'ArrowLeft') { lbNav(-1); return; }
-      if (e.key === 'ArrowRight') { lbNav(1); return; }
-    }
-    if (e.key === 'Escape') {
-      if (el('modal').classList.contains('open')) closeModal();
-      if (el('mobileNav').classList.contains('open')) closeMobileMenu();
-    }
-    if (el('modal').classList.contains('open')) {
-      if (e.key === 'ArrowLeft') setGalleryImg(currentImgIdx - 1);
-      if (e.key === 'ArrowRight') setGalleryImg(currentImgIdx + 1);
-    }
-  });
-
-  el('hamburger').addEventListener('click', () => {
-    el('mobileNav').classList.add('open');
-    el('hamburger').setAttribute('aria-expanded', 'true');
-    el('mobileNavClose').focus();
-  });
-  el('mobileNavClose').addEventListener('click', closeMobileMenu);
-
-  el('leadForm').addEventListener('submit', e => {
+  el('leadForm').addEventListener('submit',e=>{
     e.preventDefault();
-    const name = el('leadName').value.trim();
-    const phone = el('leadPhone').value.trim();
-    if (!name || !phone) { alert('Por favor, preencha nome e WhatsApp.'); return; }
-    const msg = [
-      'Olá! Vim pelo site da Vitrine Auto Leste.',
-      '',
-      `Nome: ${name}`,
-      `WhatsApp: ${phone}`,
-      `Veículo: ${el('leadVehicle').value || 'Não definido'}`,
-      `Interesse: ${el('leadIntent').value}`,
-      `Entrada: ${el('leadEntry').value.trim() || 'Não informado'}`,
-      `Horário: ${el('leadTime').value.trim() || 'Não informado'}`,
-      `Mensagem: ${el('leadMessage').value.trim() || 'Sem observações'}`
-    ].join('\n');
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+    const name=el('leadName').value.trim(), phone=el('leadPhone').value.trim();
+    if(!name||!phone){ alert('Por favor, preencha nome e WhatsApp.'); return; }
+    const msg=`Olá! Vim pelo site da Vitrine Auto Leste.\n\nNome: ${name}\nWhatsApp: ${phone}\nVeículo: ${el('leadVehicle').value||'Não definido'}\nInteresse: ${el('leadIntent').value}\nEntrada: ${el('leadEntry').value.trim()||'Não informado'}\nHorário: ${el('leadTime').value.trim()||'Não informado'}\nMensagem: ${el('leadMessage').value.trim()||'Sem observações'}`;
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
   });
 
-  const hash = location.hash.slice(1);
-  if (hash) {
-    const v = VEHICLES.find(x => x.slug === hash || x.id === hash);
-    if (v) openVehicle(v.id);
-  }
+  const hash=location.hash.slice(1);
+  if(hash){ const v=VEHICLES.find(x=>x.slug===hash||x.id===hash); if(v) openVehicle(v.id); }
 
-  injectVehicleSchema();
+  // Schema.org ItemList
+  const s=document.createElement('script'); s.type='application/ld+json';
+  s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":"Veículos disponíveis — Vitrine Auto Leste","itemListElement":VEHICLES.map((v,i)=>({
+    "@type":"ListItem","position":i+1,"item":{"@type":"Vehicle","name":v.name,"description":v.description,"color":v.color,"fuelType":v.fuel,"vehicleTransmission":v.transmission,"vehicleModelDate":String(v.model_year),"offers":{"@type":"Offer","price":v.price,"priceCurrency":"BRL","availability":"https://schema.org/InStock"},...(v.km?{"mileageFromOdometer":{"@type":"QuantitativeValue","value":v.km,"unitCode":"KMT"}}:{})}}))}));
+  document.head.appendChild(s);
+
   render();
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded',init);
 </script>
 </body>
 </html>
