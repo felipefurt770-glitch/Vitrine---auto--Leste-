@@ -62,13 +62,12 @@
     .btn-lg{padding:13px 24px;font-size:15px}
 
     /* ─── HERO BANNER ─────────────────────────── */
-    .hero{background:var(--navy);line-height:0}
+    .hero{background:var(--navy-dark);line-height:0;position:relative}
     .hero-bg{width:100%;height:auto;display:block}
-    /* título sobreposto ao banner */
-    .hero-title-overlay{position:absolute;inset:0;display:flex;align-items:center;pointer-events:none;z-index:2}
-    .hero-title-inner{display:flex;flex-direction:column;gap:0;pointer-events:none}
-    .hero-cta-t1{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,4vw,54px);color:var(--white);letter-spacing:-.03em;line-height:1.05;text-shadow:0 2px 16px rgba(5,11,20,.5)}
-    .hero-cta-t2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,4vw,54px);color:var(--gold2);letter-spacing:-.03em;line-height:1.05;text-shadow:0 2px 16px rgba(5,11,20,.5)}
+    /* ─── HEADLINE BANNER ────────────────────── */
+    .headline-facilitamos{position:absolute;left:5%;top:30%;max-width:46%;font-family:'Montserrat',sans-serif;font-weight:800;line-height:.98;letter-spacing:-.03em;z-index:5;text-shadow:0 2px 20px rgba(5,11,20,.35)}
+    .headline-facilitamos .linha-1{display:block;color:#F4F4F2;font-size:clamp(64px,5.4vw,92px)}
+    .headline-facilitamos .linha-2{display:block;color:#B3874F;font-size:clamp(64px,5.4vw,92px)}
 
     .hero-cta-strip{background:var(--navy-dark);padding:14px 0;border-bottom:2px solid rgba(179,135,79,.3)}
     .hero-cta-strip-inner{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:nowrap}
@@ -241,9 +240,8 @@
       .modal-info{grid-template-columns:1fr}
     }
     @media(max-width:620px){
-      .hero-title-overlay{align-items:flex-start}
-      .hero-title-inner{padding-top:8%}
-      .hero-cta-t1,.hero-cta-t2{font-size:clamp(20px,7.5vw,38px)}
+      .headline-facilitamos{left:5%;top:12%;max-width:62%}
+      .headline-facilitamos .linha-1,.headline-facilitamos .linha-2{font-size:clamp(30px,9.5vw,56px)}
       .hero-cta-strip-inner{gap:8px}
       .hero-cta-btns{gap:8px}
       .hero-cta-btns .btn-lg{padding:10px 14px;font-size:12.5px}
@@ -303,14 +301,10 @@
     <source media="(max-width:620px)" srcset="assets/brand/Banner vertical.png">
     <img class="hero-bg" src="assets/brand/Banner horizontal.png" alt="Vitrine Auto Leste — Veículos selecionados da Zona Leste">
   </picture>
-  <div class="hero-title-overlay" aria-hidden="true">
-    <div class="container">
-      <div class="hero-title-inner">
-        <span class="hero-cta-t1">Facilitamos</span>
-        <span class="hero-cta-t2">Sua conquista.</span>
-      </div>
-    </div>
-  </div>
+  <h1 class="headline-facilitamos">
+    <span class="linha-1">Facilitamos</span>
+    <span class="linha-2">sua conquista</span>
+  </h1>
 </section>
 
 <!-- ═══ CTA STRIP ═════════════════════════════════════════ -->
