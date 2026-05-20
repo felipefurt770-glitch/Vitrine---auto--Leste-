@@ -108,6 +108,23 @@
     .adv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
     .adv-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;align-items:center}
 
+    /* ─── BRANDS STRIP ────────────────────────────── */
+    .brands-strip{background:var(--surface);border-bottom:1px solid var(--border);padding:22px 0 18px}
+    .brands-strip.hidden{display:none}
+    .brands-label{font:800 11px var(--font);color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .brands-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x mandatory;justify-content:center}
+    .brands-scroll::-webkit-scrollbar{display:none}
+    .brand-card{display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;border:none;background:none;padding:4px 10px;flex-shrink:0;scroll-snap-align:start;transition:.18s}
+    .brand-logo-wrap{width:76px;height:76px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;transition:.22s;box-shadow:0 1px 5px rgba(0,0,0,.07)}
+    .brand-logo-wrap img{width:56px;height:56px;object-fit:contain;display:block}
+    .brand-card:hover .brand-logo-wrap{border-color:var(--gold);box-shadow:0 5px 18px rgba(179,135,79,.22);transform:scale(1.06)}
+    .brand-card.active .brand-logo-wrap{border-color:var(--gold);background:rgba(179,135,79,.07);box-shadow:0 4px 14px rgba(179,135,79,.2)}
+    .brand-card-name{font:700 11px var(--font);color:var(--text2);text-align:center;letter-spacing:.01em;white-space:nowrap}
+    .brand-card.active .brand-card-name{color:var(--gold)}
+    .brands-dots{display:flex;justify-content:center;gap:5px;margin-top:14px;align-items:center}
+    .bdot{width:7px;height:7px;border-radius:50%;background:var(--gray-light);border:none;padding:0;cursor:pointer;transition:.25s;flex-shrink:0}
+    .bdot.active{background:var(--gold);width:20px;border-radius:4px}
+
     /* ─── SECTION ─────────────────────────────── */
     .section{padding:40px 0}
     .section-title{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.03em;color:var(--text)}
@@ -264,6 +281,10 @@
       .adv-grid{grid-template-columns:1fr 1fr}
       .search-center-row{gap:8px}
       .filter-toggle-btn{min-width:52px;padding:6px 10px}
+      .brands-scroll{justify-content:flex-start}
+      .brand-card{padding:4px 6px}
+      .brand-logo-wrap{width:68px;height:68px}
+      .brand-logo-wrap img{width:50px;height:50px}
 
       .modal-specs-grid{grid-template-columns:1fr 1fr}
       .wa-float .wa-label{display:none}
@@ -381,6 +402,47 @@
         <button class="btn btn-outline" id="clearFilters" style="border-radius:8px;padding:10px 18px">Limpar</button>
         <button id="applyFilters2" aria-hidden="true" style="display:none"></button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BRANDS STRIP ═════════════════════════════════════ -->
+<div class="brands-strip" id="brandsStrip">
+  <div class="container">
+    <p class="brands-label">Principais marcas</p>
+    <div class="brands-scroll" id="brandsScroll">
+      <button class="brand-card" data-make="Volkswagen" onclick="filterByBrand('Volkswagen')" aria-label="Ver veículos Volkswagen">
+        <div class="brand-logo-wrap"><img src="assets/brand/Volks.jpg" alt="Logo Volkswagen" loading="lazy"></div>
+        <span class="brand-card-name">Volkswagen</span>
+      </button>
+      <button class="brand-card" data-make="Ford" onclick="filterByBrand('Ford')" aria-label="Ver veículos Ford">
+        <div class="brand-logo-wrap"><img src="assets/brand/Ford.jpg" alt="Logo Ford" loading="lazy"></div>
+        <span class="brand-card-name">Ford</span>
+      </button>
+      <button class="brand-card" data-make="Mini" onclick="filterByBrand('Mini')" aria-label="Ver veículos MINI">
+        <div class="brand-logo-wrap"><img src="assets/brand/MINI.jpg" alt="Logo MINI" loading="lazy"></div>
+        <span class="brand-card-name">MINI</span>
+      </button>
+      <button class="brand-card" data-make="Fiat" onclick="filterByBrand('Fiat')" aria-label="Ver veículos Fiat">
+        <div class="brand-logo-wrap"><img src="assets/brand/Fiat.jpg" alt="Logo Fiat" loading="lazy"></div>
+        <span class="brand-card-name">Fiat</span>
+      </button>
+      <button class="brand-card" data-make="Hyundai" onclick="filterByBrand('Hyundai')" aria-label="Ver veículos Hyundai">
+        <div class="brand-logo-wrap"><img src="assets/brand/Hyundai.jpg" alt="Logo Hyundai" loading="lazy"></div>
+        <span class="brand-card-name">Hyundai</span>
+      </button>
+      <button class="brand-card" data-make="Chevrolet" onclick="filterByBrand('Chevrolet')" aria-label="Ver veículos Chevrolet">
+        <div class="brand-logo-wrap"><img src="assets/brand/Chevrolet.jpg" alt="Logo Chevrolet" loading="lazy"></div>
+        <span class="brand-card-name">Chevrolet</span>
+      </button>
+    </div>
+    <div class="brands-dots" id="brandsDots" aria-hidden="true">
+      <button class="bdot active" aria-label="Volkswagen"></button>
+      <button class="bdot" aria-label="Ford"></button>
+      <button class="bdot" aria-label="MINI"></button>
+      <button class="bdot" aria-label="Fiat"></button>
+      <button class="bdot" aria-label="Hyundai"></button>
+      <button class="bdot" aria-label="Chevrolet"></button>
     </div>
   </div>
 </div>
@@ -775,7 +837,7 @@ function init() {
   el('applyFilters2').addEventListener('click',render);
   el('clearFilters').addEventListener('click',clearAll);
 
-  el('advToggle').addEventListener('click',()=>{ const af=el('advFilters'),btn=el('advToggle'); af.classList.toggle('open'); const isOpen=af.classList.contains('open'); btn.classList.toggle('active',isOpen); btn.setAttribute('aria-expanded',isOpen); });
+  el('advToggle').addEventListener('click',()=>{ const af=el('advFilters'),btn=el('advToggle'); af.classList.toggle('open'); const isOpen=af.classList.contains('open'); btn.classList.toggle('active',isOpen); btn.setAttribute('aria-expanded',isOpen); const bs=el('brandsStrip'); if(bs) bs.classList.toggle('hidden',isOpen); });
 
   el('closeModal').addEventListener('click',closeModal);
   el('modal').addEventListener('click',e=>{ if(e.target===el('modal')) closeModal(); });
@@ -815,7 +877,36 @@ function init() {
   document.head.appendChild(s);
 
   renderFeatured();
+  initBrands();
   render();
+}
+
+function filterByBrand(make) {
+  el('make').value = make;
+  document.querySelectorAll('.brand-card').forEach(c => c.classList.toggle('active', c.dataset.make === make));
+  render();
+  const grid = document.getElementById('vehicleGrid');
+  if(grid) grid.closest('section').scrollIntoView({behavior:'smooth', block:'start'});
+}
+window.filterByBrand = filterByBrand;
+
+function initBrands() {
+  const scroll = el('brandsScroll');
+  const dots = document.querySelectorAll('#brandsDots .bdot');
+  if(!scroll || !dots.length) return;
+  const cards = Array.from(scroll.querySelectorAll('.brand-card'));
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      if(cards[i]) cards[i].scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+      dots.forEach((d, j) => d.classList.toggle('active', j === i));
+    });
+  });
+  scroll.addEventListener('scroll', () => {
+    if(!cards.length) return;
+    const cw = scroll.offsetWidth;
+    const idx = Math.min(cards.length-1, Math.round(scroll.scrollLeft / (cards[0].offsetWidth + 8)));
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }, {passive:true});
 }
 
 document.addEventListener('DOMContentLoaded',init);
