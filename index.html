@@ -88,19 +88,25 @@
     .fcard-km{font-size:11px;color:var(--text3);margin-top:2px}
 
     /* ─── SEARCH BAR ──────────────────────────── */
-    .search-bar-wrap{background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--sh);position:sticky;top:72px;z-index:90}
-    .search-bar{display:flex;gap:8px;padding:14px 0;align-items:flex-end;flex-wrap:wrap}
+    .search-bar-wrap{background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--sh);position:sticky;top:72px;z-index:90;padding:18px 0}
+    .search-center-row{display:flex;justify-content:center;align-items:center;gap:10px}
+    .search-main-box{position:relative;width:min(680px,100%)}
+    .search-main-box .si{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
+    .search-main-box input[type="search"]{width:100%;height:50px;border-radius:14px;border:1.5px solid var(--border);padding:0 18px 0 46px;font:600 14px var(--font);color:var(--text);background:#fff;outline:none;transition:.2s;box-shadow:0 1px 4px rgba(0,0,0,.05);-webkit-appearance:none}
+    .search-main-box input[type="search"]:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(179,135,79,.13)}
+    .filter-toggle-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:none;border:1.5px solid var(--border);border-radius:12px;padding:7px 13px;cursor:pointer;color:var(--text2);transition:.2s;min-width:58px;height:50px}
+    .filter-toggle-btn:hover,.filter-toggle-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(179,135,79,.06)}
+    .filter-toggle-btn svg{width:18px;height:18px}
+    .filter-toggle-btn .ftxt{font:700 10px var(--font);text-transform:uppercase;letter-spacing:.05em}
     .sb-field{display:flex;flex-direction:column;gap:4px;min-width:0}
     .sb-field label{font-size:10px;font-weight:800;color:var(--text3);letter-spacing:.05em;text-transform:uppercase}
     .sb-field input,.sb-field select{background:#f8fafc;border:1.5px solid var(--border);color:var(--text);padding:9px 12px;border-radius:8px;outline:none;font:inherit;font-size:13px;transition:.15s}
     .sb-field input:focus,.sb-field select:focus{border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(7,26,51,.08)}
-    .sb-field.grow{flex:1;min-width:160px}
-    .sb-actions{display:flex;gap:8px;align-items:flex-end;padding-bottom:0}
-    .advanced-toggle{background:none;border:1.5px solid var(--border);color:var(--text2);border-radius:8px;padding:9px 14px;font:600 13px inherit;cursor:pointer;transition:.15s;white-space:nowrap}
-    .advanced-toggle:hover{border-color:var(--navy);color:var(--navy)}
-    .advanced-filters{display:none;border-top:1px solid var(--border);padding:14px 0}
-    .advanced-filters.open{display:block}
-    .adv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    .advanced-filters{display:none;border-top:1px solid var(--border);padding:16px 0 4px;margin-top:16px}
+    .advanced-filters.open{display:block;animation:adf .22s ease}
+    @keyframes adf{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+    .adv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .adv-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;align-items:center}
 
     /* ─── SECTION ─────────────────────────────── */
     .section{padding:40px 0}
@@ -235,8 +241,7 @@
       .seo-grid,.form-grid{grid-template-columns:1fr}
       .header-nav{display:none}
       .hamburger{display:block}
-      .search-bar{flex-wrap:wrap}
-      .sb-field.grow{min-width:calc(50% - 8px)}
+      .search-main-box{width:100%}
       .adv-grid{grid-template-columns:repeat(3,1fr)}
       .modal-info{grid-template-columns:1fr}
     }
@@ -257,6 +262,8 @@
       .lb-next{right:4px}
       .form-row{grid-template-columns:1fr}
       .adv-grid{grid-template-columns:1fr 1fr}
+      .search-center-row{gap:8px}
+      .filter-toggle-btn{min-width:52px;padding:6px 10px}
 
       .modal-specs-grid{grid-template-columns:1fr 1fr}
       .wa-float .wa-label{display:none}
@@ -338,39 +345,27 @@
 <!-- ═══ SEARCH / FILTER BAR ══════════════════════════════ -->
 <div class="search-bar-wrap" id="veiculos" aria-label="Busca e filtros">
   <div class="container">
-    <div class="search-bar">
-      <div class="sb-field grow">
-        <label for="search">Buscar</label>
-        <input id="search" type="search" placeholder="Marca, modelo, versão, cor, câmbio…"/>
+    <div class="search-center-row">
+      <div class="search-main-box">
+        <svg class="si" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="search" type="search" placeholder="Buscar por marca, modelo, versão, cor ou câmbio…"/>
       </div>
-      <div class="sb-field">
-        <label for="make">Marca</label>
-        <select id="make"><option value="">Todas</option></select>
-      </div>
-      <div class="sb-field">
-        <label for="category">Categoria</label>
-        <select id="category"><option value="">Todas</option></select>
-      </div>
-      <div class="sb-field">
-        <label for="transmission">Câmbio</label>
-        <select id="transmission"><option value="">Todos</option></select>
-      </div>
-      <div class="sb-field">
-        <label for="fuel">Combustível</label>
-        <select id="fuel"><option value="">Todos</option></select>
-      </div>
-      <div class="sb-actions">
-        <button class="btn btn-navy" id="applyFilters" style="border-radius:8px;padding:10px 18px">Buscar</button>
-        <button class="advanced-toggle" id="advToggle">+ Filtros</button>
-      </div>
+      <button class="filter-toggle-btn" id="advToggle" type="button" aria-label="Filtros avançados" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+        <span class="ftxt">Filtros</span>
+      </button>
     </div>
     <div class="advanced-filters" id="advFilters">
       <div class="adv-grid">
+        <div class="sb-field"><label for="make">Marca</label><select id="make"><option value="">Todas</option></select></div>
+        <div class="sb-field"><label for="category">Categoria</label><select id="category"><option value="">Todas</option></select></div>
+        <div class="sb-field"><label for="transmission">Câmbio</label><select id="transmission"><option value="">Todos</option></select></div>
+        <div class="sb-field"><label for="fuel">Combustível</label><select id="fuel"><option value="">Todos</option></select></div>
+        <div class="sb-field"><label for="color">Cor</label><select id="color"><option value="">Todas</option></select></div>
         <div class="sb-field"><label for="minPrice">Preço mín.</label><input id="minPrice" type="number" inputmode="numeric" placeholder="0"/></div>
         <div class="sb-field"><label for="maxPrice">Preço máx.</label><input id="maxPrice" type="number" inputmode="numeric" placeholder="120000"/></div>
         <div class="sb-field"><label for="maxKm">KM máx.</label><input id="maxKm" type="number" inputmode="numeric" placeholder="ex.: 80000"/></div>
         <div class="sb-field"><label for="minYear">Ano mín.</label><input id="minYear" type="number" inputmode="numeric" placeholder="2010"/></div>
-        <div class="sb-field"><label for="color">Cor</label><select id="color"><option value="">Todas</option></select></div>
         <div class="sb-field"><label for="sort">Ordenar</label>
           <select id="sort">
             <option value="featured">Destaques primeiro</option>
@@ -381,9 +376,10 @@
           </select>
         </div>
       </div>
-      <div style="display:flex;gap:8px;margin-top:12px">
-        <button class="btn btn-navy" id="applyFilters2" style="border-radius:8px;padding:9px 18px">Aplicar</button>
-        <button class="advanced-toggle" id="clearFilters">Limpar filtros</button>
+      <div class="adv-actions">
+        <button class="btn btn-navy" id="applyFilters" style="border-radius:8px;padding:10px 20px">Aplicar filtros</button>
+        <button class="btn btn-outline" id="clearFilters" style="border-radius:8px;padding:10px 18px">Limpar</button>
+        <button id="applyFilters2" aria-hidden="true" style="display:none"></button>
       </div>
     </div>
   </div>
@@ -779,7 +775,7 @@ function init() {
   el('applyFilters2').addEventListener('click',render);
   el('clearFilters').addEventListener('click',clearAll);
 
-  el('advToggle').addEventListener('click',()=>{ const af=el('advFilters'); af.classList.toggle('open'); el('advToggle').textContent=af.classList.contains('open')?'− Filtros':'+ Filtros'; });
+  el('advToggle').addEventListener('click',()=>{ const af=el('advFilters'),btn=el('advToggle'); af.classList.toggle('open'); const isOpen=af.classList.contains('open'); btn.classList.toggle('active',isOpen); btn.setAttribute('aria-expanded',isOpen); });
 
   el('closeModal').addEventListener('click',closeModal);
   el('modal').addEventListener('click',e=>{ if(e.target===el('modal')) closeModal(); });
