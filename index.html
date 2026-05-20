@@ -815,7 +815,7 @@ function init() {
   // Schema.org ItemList
   const s=document.createElement('script'); s.type='application/ld+json';
   s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList","name":"Veículos disponíveis — Vitrine Auto Leste","itemListElement":VEHICLES.map((v,i)=>({
-    "@type":"ListItem","position":i+1,"item":{"@type":"Vehicle","name":v.name,"description":v.description,"color":v.color,"fuelType":v.fuel,"vehicleTransmission":v.transmission,"vehicleModelDate":String(v.model_year),"offers":{"@type":"Offer","price":v.price,"priceCurrency":"BRL","availability":"https://schema.org/InStock"},...(v.km?{"mileageFromOdometer":{"@type":"QuantitativeValue","value":v.km,"unitCode":"KMT"}}:{})}}))}));
+    "@type":"ListItem","position":i+1,"item":{"@type":"Vehicle","name":v.name,"description":v.description,"color":v.color,"fuelType":v.fuel,"vehicleTransmission":v.transmission,"vehicleModelDate":String(v.model_year),"offers":{"@type":"Offer","price":v.price,"priceCurrency":"BRL","availability":"https://schema.org/InStock"},...(v.km?{"mileageFromOdometer":{"@type":"QuantitativeValue","value":v.km,"unitCode":"KMT"}}:{})}}))});
   document.head.appendChild(s);
 
   renderFeatured();
